@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap");
+body {
+  background-image: linear-gradient(#1b1b1b, #242424);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  font-family: "Zen Kurenaido", sans-serif;
+}
+
+#hero {
+  width: auto;
+  text-align: center;
+}/*# sourceMappingURL=main.css.map */
