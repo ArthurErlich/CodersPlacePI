@@ -1,0 +1,4 @@
+#!/bin/sh
+export PHPRC="/user0/erlichar/public_html/.hfu_conf/"
+export TMPDIR="/user0/erlichar/public_html/.hfu_tmp/"
+exec /usr/bin/php5-cgi

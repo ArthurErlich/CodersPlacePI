@@ -7,7 +7,105 @@ body {
   font-family: "Zen Kurenaido", sans-serif;
 }
 
+@media screen and (min-width: 600px) {
+  body {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body {
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+}
+::-moz-selection {
+  background-color: rgba(0, 0, 0, 0.2274509804);
+}
+::selection {
+  background-color: rgba(0, 0, 0, 0.2274509804);
+}
+
 #hero {
-  width: auto;
   text-align: center;
+}
+
+#hero div {
+  background-color: #2c2c2c;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  border-radius: 15px 15px 0 0;
+}
+
+#hero div h1 {
+  margin: 0px 20px 0px 20px;
+}
+
+#hreoDrop {
+  border-radius: 5px;
+  background-color: #2c2c2c;
+}
+
+#hreoDropText {
+  margin-left: 5px;
+}
+
+.hreoDropIcon {
+  float: right;
+  width: 13px;
+  height: 13px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+#bodyContent {
+  background-color: #8d8d8d;
+  color: #fff;
+  text-shadow: #2c2c2c 0px 0px 5px;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 1.2em;
+  overflow: hidden;
+}
+
+#bodyIndex {
+  float: left;
+  width: 30px;
+  background-color: #4d4d4d;
+  text-shadow: #2c2c2c 0px 0px 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+}
+
+.bodyLink {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: 60px;
+  margin-right: 10px;
+}
+
+.bodyLink a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.bodyLink a:hover {
+  font-style: italic;
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgb(255, 70, 70);
+}
+
+#bodyLink p {
+  margin: 5px;
 }/*# sourceMappingURL=main.css.map */
