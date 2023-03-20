@@ -84,7 +84,7 @@ body {
     clear: both;
 }
 
-.bodyLink {
+.bodyText {
     width: fit-content;
     height: fit-content;
 
@@ -95,11 +95,11 @@ body {
     //border-radius: 5px;
     //background-color: #2c2c2c;
 }
-.bodyLink a {
+.bodyText a {
     text-decoration: none;
     color: #fff;
 }
-.bodyLink a:hover  {
+.bodyText a:hover  {
     font-style: italic;
     color: #fff;
 
@@ -107,11 +107,4 @@ body {
     text-decoration-style: wavy;
     text-decoration-color: rgb(255, 70, 70);
 
-}
-
-#bodyLink:nth-child(1n){
-   
-}
-#bodyLink p{
-    margin: 5px;
 }

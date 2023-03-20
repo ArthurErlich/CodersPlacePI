@@ -1,21 +1,35 @@
-namespace codersPlace{
+namespace codersPlace {
 
-const  windowCloser: HTMLElement = document.getElementById("windowCloser")!;
+    const windowCloser: HTMLElement = document.getElementById("windowCloser");
+    const windowOpener: HTMLElement = document.getElementById("windowOpener");
+    
+    //check bodyTextElements name -> changed from bodyLinkt to bodyText
+    let bodyIndexElement: HTMLElement = document.getElementById("bodyIndex");
+    let bodyTextElements: HTMLElement[] = Array.from(document.getElementsByClassName("bodyText"));
 
-let indexSpacing: number = 3;
+    windowCloser.addEventListener("click", function(event){
+        closeWindow()// add event.target later for multiply windows
+    });
 
-setIndexNumber();
+
+    setIndexNumber(3);
 
 
 
-    function setIndexNumber(): void {
-        let bodyIndexElement: HTMLElement = document.getElementById("bodyIndex");
-        let bodyLinkElements: HTMLElement[] = Array.from(document.getElementsByClassName("bodyLink"));
-        console.log(bodyLinkElements);
+    //this is a new addition
+    function closeWindow(){
+        for (let i: number =0; i < bodyTextElements.length; i++){
+            bodyTextElements[i].style.display = "hidden";
+        }
+
+    }
+
+    function setIndexNumber(indexSpacing: number): void {
+        console.log(bodyTextElements);
         console.log(document.querySelectorAll("bodyLink"));
-        
 
-        for (let i = 0; i < (bodyLinkElements.length+1) * indexSpacing; i++) {
+
+        for (let i = 0; i < (bodyTextElements.length + 1) * indexSpacing; i++) {
             if (i <= 9) {
                 bodyIndexElement.innerText += "00" + i + "\n";
                 console.log("00" + i + "\n");
