@@ -84,7 +84,7 @@ body {
   clear: both;
 }
 
-.bodyLink {
+.bodyText {
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
@@ -93,12 +93,12 @@ body {
   margin-right: 10px;
 }
 
-.bodyLink a {
+.bodyText a {
   text-decoration: none;
   color: #fff;
 }
 
-.bodyLink a:hover {
+.bodyText a:hover {
   font-style: italic;
   color: #fff;
   text-decoration: underline;
@@ -106,6 +106,6 @@ body {
   text-decoration-color: rgb(255, 70, 70);
 }
 
-#bodyLink p {
-  margin: 5px;
+#linkToSoziol {
+  font-weight: 900;
 }/*# sourceMappingURL=main.css.map */

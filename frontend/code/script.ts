@@ -1,14 +1,17 @@
 namespace codersPlace {
 
-    const windowCloser: HTMLElement = document.getElementById("windowCloser");
-    const windowOpener: HTMLElement = document.getElementById("windowOpener");
+    const windowCloser: HTMLElement = document.getElementById("windowCloser")!;
+    const windowOpener: HTMLElement = document.getElementById("windowOpener")!;
     
     //check bodyTextElements name -> changed from bodyLinkt to bodyText
-    let bodyIndexElement: HTMLElement = document.getElementById("bodyIndex");
-    let bodyTextElements: HTMLElement[] = Array.from(document.getElementsByClassName("bodyText"));
+    let bodyIndexElement: HTMLElement = document.getElementById("bodyIndex")!;
+    let bodyTextElements: HTMLCollection = document.getElementsByClassName("bodyText")!;
 
     windowCloser.addEventListener("click", function(event){
         closeWindow()// add event.target later for multiply windows
+    });
+    windowOpener.addEventListener("click", function(event){
+        openWindow()// add event.target later for multiply windows
     });
 
 
@@ -19,9 +22,18 @@ namespace codersPlace {
     //this is a new addition
     function closeWindow(){
         for (let i: number =0; i < bodyTextElements.length; i++){
-            bodyTextElements[i].style.display = "hidden";
+            console.log((<HTMLElement>bodyTextElements.item(i)).style.display);
+            (<HTMLElement>bodyTextElements.item(i)).style.display = "none";
         }
+        bodyIndexElement.style.display = "none";
+    }
 
+    function openWindow(){
+        for (let i: number =0; i < bodyTextElements.length; i++){
+            console.log((<HTMLElement>bodyTextElements.item(i)).style.display);
+            (<HTMLElement>bodyTextElements.item(i)).style.display = "block";
+        }
+        bodyIndexElement.style.display = "block";
     }
 
     function setIndexNumber(indexSpacing: number): void {
@@ -32,15 +44,14 @@ namespace codersPlace {
         for (let i = 0; i < (bodyTextElements.length + 1) * indexSpacing; i++) {
             if (i <= 9) {
                 bodyIndexElement.innerText += "00" + i + "\n";
-                console.log("00" + i + "\n");
 
             } else if (i <= 99) {
                 bodyIndexElement.innerText += "0" + i + "\n";
-                console.log("0" + i + "\n");
+
 
             } else {
                 bodyIndexElement.innerText += i.toString() + "\n";
-                console.log(i.toString() + "\n");
+
             }
         }
     }
