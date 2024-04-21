@@ -5,7 +5,8 @@ namespace codersPlace {
 
     //check bodyTextElements name -> changed from bodyLinkt to bodyText
     let bodyIndexElement: HTMLElement = document.getElementById("bodyIndex")!;
-    let bodyTextElements: HTMLCollection = document.getElementsByClassName("bodyContent")!;
+    let bodyContentElements: HTMLCollection = document.getElementsByClassName("bodyContent")!;
+    let paragrphElements: HTMLCollection = document.getElementsByTagName("p");
 
     windowCloser.addEventListener("click", function (event) {
         closeWindow()// add event.target later for multiply windows
@@ -17,44 +18,47 @@ namespace codersPlace {
 
 
 
-    setIndexNumber(1);
+    setIndexNumber();
     createFooter();
     createSiteLinks();
 
 
     //this is a new addition
     function closeWindow() {
-        for (let i: number = 0; i < bodyTextElements.length; i++) {
+        for (let i: number = 0; i < bodyContentElements.length; i++) {
             // console.log((<HTMLElement>bodyTextElements.item(i)).style.display);
-            (<HTMLElement>bodyTextElements.item(i)).style.display = "none";
+            (<HTMLElement>bodyContentElements.item(i)).style.display = "none";
         }
         bodyIndexElement.style.display = "none";
     }
 
     function openWindow() {
-        for (let i: number = 0; i < bodyTextElements.length; i++) {
+        for (let i: number = 0; i < bodyContentElements.length; i++) {
             // console.log((<HTMLElement>bodyTextElements.item(i)).style.display);
-            (<HTMLElement>bodyTextElements.item(i)).style.display = "block";
+            (<HTMLElement>bodyContentElements.item(i)).style.display = "block";
         }
         bodyIndexElement.style.display = "block";
     }
 
-    function setIndexNumber(indexSpacing: number): void {
+    function setIndexNumber(): void {
         // console.log(bodyTextElements);
         // console.log(document.querySelectorAll("bodyLink"));
+        let textHight;
+        if (paragrphElements.length == 0) {
+            textHight = 1;
+        } else {
+            textHight = parseInt(window.getComputedStyle(paragrphElements[0]).fontSize, 10);
+        }
 
+        let rows = Math.round((<HTMLElement>bodyContentElements[0]).offsetHeight / textHight)
 
-        for (let i = 0; i < (bodyTextElements.length + 1) * indexSpacing; i++) {
+        for (let i = 0; i < (rows ); i++) {
             if (i <= 9) {
                 bodyIndexElement.innerText += "00" + i + "\n";
-
             } else if (i <= 99) {
                 bodyIndexElement.innerText += "0" + i + "\n";
-
-
             } else {
                 bodyIndexElement.innerText += i.toString() + "\n";
-
             }
         }
     }
@@ -67,7 +71,7 @@ function createFooter() {
         return;
     }
 
-    footer[0].innerHTML =` 
+    footer[0].innerHTML = ` 
     <div class="footerLinkGroupe">
             <div class="footerLinkItem">
                <a href="datenschutz.html">Datenschutz</a> 
@@ -86,12 +90,12 @@ function createFooter() {
 
 }
 function createSiteLinks() {
-   let siteLinks: HTMLCollection = document.getElementsByClassName("siteLinks")!;
+    let siteLinks: HTMLCollection = document.getElementsByClassName("siteLinks")!;
 
-   if(siteLinks.length == 0){
+    if (siteLinks.length == 0) {
         return;
-   }
-   siteLinks[0].innerHTML = `
+    }
+    siteLinks[0].innerHTML = `
    <div class="home">
         <a href="index.html">
             <img src="../icon/text-file-icon.svg" alt="TextFile"/>
