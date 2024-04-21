@@ -5,7 +5,7 @@ namespace codersPlace {
 
     //check bodyTextElements name -> changed from bodyLinkt to bodyText
     let bodyIndexElement: HTMLElement = document.getElementById("bodyIndex")!;
-    let bodyTextElements: HTMLCollection = document.getElementsByTagName("p")!;
+    let bodyTextElements: HTMLCollection = document.getElementsByClassName("bodyContent")!;
 
     windowCloser.addEventListener("click", function (event) {
         closeWindow()// add event.target later for multiply windows

@@ -5,7 +5,7 @@ var codersPlace;
     const windowOpener = document.getElementById("windowOpener");
     //check bodyTextElements name -> changed from bodyLinkt to bodyText
     let bodyIndexElement = document.getElementById("bodyIndex");
-    let bodyTextElements = document.getElementsByTagName("p");
+    let bodyTextElements = document.getElementsByClassName("bodyContent");
     windowCloser.addEventListener("click", function (event) {
         closeWindow(); // add event.target later for multiply windows
     });
