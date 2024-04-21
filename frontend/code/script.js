@@ -5,35 +5,44 @@ var codersPlace;
     const windowOpener = document.getElementById("windowOpener");
     //check bodyTextElements name -> changed from bodyLinkt to bodyText
     let bodyIndexElement = document.getElementById("bodyIndex");
-    let bodyTextElements = document.getElementsByTagName("p");
+    let bodyContentElements = document.getElementsByClassName("bodyContent");
+    let paragrphElements = document.getElementsByTagName("p");
     windowCloser.addEventListener("click", function (event) {
         closeWindow(); // add event.target later for multiply windows
     });
     windowOpener.addEventListener("click", function (event) {
         openWindow(); // add event.target later for multiply windows
     });
-    setIndexNumber(1);
+    setIndexNumber();
     createFooter();
     createSiteLinks();
     //this is a new addition
     function closeWindow() {
-        for (let i = 0; i < bodyTextElements.length; i++) {
+        for (let i = 0; i < bodyContentElements.length; i++) {
             // console.log((<HTMLElement>bodyTextElements.item(i)).style.display);
-            bodyTextElements.item(i).style.display = "none";
+            bodyContentElements.item(i).style.display = "none";
         }
         bodyIndexElement.style.display = "none";
     }
     function openWindow() {
-        for (let i = 0; i < bodyTextElements.length; i++) {
+        for (let i = 0; i < bodyContentElements.length; i++) {
             // console.log((<HTMLElement>bodyTextElements.item(i)).style.display);
-            bodyTextElements.item(i).style.display = "block";
+            bodyContentElements.item(i).style.display = "block";
         }
         bodyIndexElement.style.display = "block";
     }
-    function setIndexNumber(indexSpacing) {
+    function setIndexNumber() {
         // console.log(bodyTextElements);
         // console.log(document.querySelectorAll("bodyLink"));
-        for (let i = 0; i < (bodyTextElements.length + 1) * indexSpacing; i++) {
+        let textHight;
+        if (paragrphElements.length == 0) {
+            textHight = 1;
+        }
+        else {
+            textHight = parseInt(window.getComputedStyle(paragrphElements[0]).fontSize, 10);
+        }
+        let rows = Math.round(bodyContentElements[0].offsetHeight / textHight);
+        for (let i = 0; i < (rows); i++) {
             if (i <= 9) {
                 bodyIndexElement.innerText += "00" + i + "\n";
             }
