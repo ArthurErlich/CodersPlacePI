@@ -17,7 +17,7 @@ namespace codersPlace {
 
 
 
-    setIndexNumber(1.5);
+    setIndexNumber(1.8);
     createFooter();
 
 

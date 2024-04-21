@@ -12,7 +12,7 @@ var codersPlace;
     windowOpener.addEventListener("click", function (event) {
         openWindow(); // add event.target later for multiply windows
     });
-    setIndexNumber(1.5);
+    setIndexNumber(1.8);
     createFooter();
     //this is a new addition
     function closeWindow() {
