@@ -1,52 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap'); NOT DSVGO Comform
+
 body {
-    background-image: linear-gradient(#1b1b1b, #242424);
+    background-image: linear-gradient(#ffffff, #cecece);
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-
     color: #fff;
-    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: "Zen Kurenaido", sans-serif;
+    margin: 0;
 }
 @media screen and (min-width: 600px) {
-    body { 
-    margin-left: 50px;
-    margin-right: 50px;
+    .window {
+        margin-left: 50px;
+        margin-right: 50px;
     }
 }
 @media screen and (min-width: 1200px) {
-    body { 
-    margin-left: 150px;
-    margin-right: 150px;
+    .window {
+        margin-left: 150px;
+        margin-right: 150px;
     }
 }
-    
-
 
 ::selection {
     background-color: #0000003a;
 }
 
-#hero {
+a {
+    text-decoration: none;
+    color: #fff;
+}
+a:hover {
+    color: #fff;
+    text-decoration:underline;
+    text-decoration-style: wavy;
+    text-decoration-color: rgb(255, 70, 70);
+}
+
+
+.hero {
     text-align: center;
 }
-#hero div{
+.hero div {
     background-color: #2c2c2c;
     width: fit-content;
     margin: auto;
-    
+
     border-radius: 15px 15px 0 0;
 }
-#hero div h1 {
+.hero div h1 {
     margin: 0px 20px 0px 20px;
 }
-#hreoDrop{
+.hreoDrop {
     //height: 20px;
     border-radius: 5px;
     background-color: #2c2c2c;
 }
-#hreoDropText{
+.hreoDropText {
     margin-left: 5px;
+    height: 25px;
 }
 .hreoDropIcon {
     float: right;
@@ -56,25 +68,24 @@ body {
     border-radius: 5px;
     background-color: #fff;
 }
-#bodyContent {
+.bodyContent {
     //height:250px;
-    background-color:#8d8d8d;
+    background-color: #8d8d8d;
     color: #fff;
     text-shadow: #2c2c2c 0px 0px 5px;
 
     //display: flex;
-    
+
     height: fit-content;
-    font-size: 1.2em ;
+    font-size: 1.2em;
     overflow: hidden;
 }
 
-#bodyIndex{
+#bodyIndex {
     float: left;
     width: 30px;
     background-color: #4d4d4d;
     text-shadow: #2c2c2c 0px 0px 5px;
-
 
     padding-left: 10px;
     padding-right: 10px;
@@ -84,30 +95,91 @@ body {
     clear: both;
 }
 
-.bodyText {
+p {
     width: fit-content;
     height: fit-content;
 
     margin-left: 60px;
     margin-right: 10px;
 
-    
     //border-radius: 5px;
     //background-color: #2c2c2c;
 }
-.bodyText a {
+p a {
     text-decoration: none;
     color: #fff;
+
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: rgb(255, 70, 70);
 }
-.bodyText a:hover  {
+p a:hover {
     font-style: italic;
     color: #fff;
 
     text-decoration: underline;
     text-decoration-style: wavy;
     text-decoration-color: rgb(255, 70, 70);
-
 }
-#linkToSoziol{
+#linkToSozio {
     font-weight: 900;
+}
+
+h2 {
+    display: inline;
+    font-size: 12pt;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 400;
+    margin: auto;
+}
+.window {
+    margin-top: 200px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #2c2c2c;
+    
+    padding: 10px;
+    text-align: center;
+}
+.footerLinkGroupe{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 25%;
+    
+}
+.footerLinkItem{
+    margin: 5px;
+}
+.bodyContent h3{
+    display: inline;
+    font-size: 12pt;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 400;
+    margin: auto;
+}
+
+.home{
+    color: #2c2c2c;
+    margin: 5px;
+    width: 40px;
+    text-align: center;
+}
+.home a{
+    color: #2c2c2c;
+    
+}
+.home img{
+    width: 30px;
 }

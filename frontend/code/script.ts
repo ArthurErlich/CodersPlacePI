@@ -2,35 +2,38 @@ namespace codersPlace {
 
     const windowCloser: HTMLElement = document.getElementById("windowCloser")!;
     const windowOpener: HTMLElement = document.getElementById("windowOpener")!;
-    
+
     //check bodyTextElements name -> changed from bodyLinkt to bodyText
     let bodyIndexElement: HTMLElement = document.getElementById("bodyIndex")!;
-    let bodyTextElements: HTMLCollection = document.getElementsByClassName("bodyText")!;
+    let bodyTextElements: HTMLCollection = document.getElementsByTagName("p")!;
 
-    windowCloser.addEventListener("click", function(event){
+    windowCloser.addEventListener("click", function (event) {
         closeWindow()// add event.target later for multiply windows
     });
-    windowOpener.addEventListener("click", function(event){
+    windowOpener.addEventListener("click", function (event) {
         openWindow()// add event.target later for multiply windows
     });
 
 
-    setIndexNumber(3);
+
+
+    setIndexNumber(1.5);
+    createFooter();
 
 
 
     //this is a new addition
-    function closeWindow(){
-        for (let i: number =0; i < bodyTextElements.length; i++){
-            console.log((<HTMLElement>bodyTextElements.item(i)).style.display);
+    function closeWindow() {
+        for (let i: number = 0; i < bodyTextElements.length; i++) {
+            // console.log((<HTMLElement>bodyTextElements.item(i)).style.display);
             (<HTMLElement>bodyTextElements.item(i)).style.display = "none";
         }
         bodyIndexElement.style.display = "none";
     }
 
-    function openWindow(){
-        for (let i: number =0; i < bodyTextElements.length; i++){
-            console.log((<HTMLElement>bodyTextElements.item(i)).style.display);
+    function openWindow() {
+        for (let i: number = 0; i < bodyTextElements.length; i++) {
+            // console.log((<HTMLElement>bodyTextElements.item(i)).style.display);
             (<HTMLElement>bodyTextElements.item(i)).style.display = "block";
         }
         bodyIndexElement.style.display = "block";
@@ -55,4 +58,30 @@ namespace codersPlace {
             }
         }
     }
+}
+
+function createFooter() {
+    let footer: HTMLCollection = document.getElementsByTagName("footer")!;
+
+    if (footer === null) {
+        return;
+    }
+
+    footer[0].innerHTML =` 
+    <div class="footerLinkGroupe">
+            <div class="footerLinkItem">
+               <a href="datenschutz.html">Datenschutz</a> 
+            </div>
+            <div class="footerLinkItem">
+               <a href="impressum.html">Impressum</a> 
+            </div>
+        </div>
+        <div class="footerLinkGroupe">
+        </div>
+        <div class="footerLinkGroupe">
+        </div>
+        <div class="footerLinkGroupe">
+        </div>
+    `;
+
 }
