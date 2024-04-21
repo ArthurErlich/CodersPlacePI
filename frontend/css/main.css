@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap");
 body {
   background-image: linear-gradient(#cecece, #979797);
   background-repeat: no-repeat;
@@ -7,6 +8,11 @@ body {
   margin: 0;
 }
 
+@media screen and (max-width: 600px) {
+  .hero div h1 {
+    max-width: 200px;
+  }
+}
 @media screen and (min-width: 600px) {
   .window {
     margin-left: 50px;
@@ -15,8 +21,9 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .window {
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
   }
 }
 ::-moz-selection {
@@ -61,7 +68,8 @@ a:hover {
 
 .hreoDropText {
   margin-left: 5px;
-  height: 25px;
+  height: 30px;
+  padding-top: 5px;
 }
 
 .hreoDropIcon {
@@ -97,7 +105,7 @@ a:hover {
   clear: both;
 }
 
-p {
+.bodyContent p {
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
@@ -140,7 +148,7 @@ h2 {
 }
 
 .window {
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 footer {
@@ -175,9 +183,10 @@ footer {
 }
 
 .home {
+  display: block;
   color: #2c2c2c;
-  margin: 5px;
-  width: 40px;
+  margin: 15px;
+  min-width: 40px;
   text-align: center;
 }
 
@@ -185,6 +194,15 @@ footer {
   color: #2c2c2c;
 }
 
+.home p {
+  margin-top: -8px;
+  margin-bottom: 0;
+}
+
 .home img {
   width: 30px;
+}
+
+.siteLinks {
+  display: flex;
 }/*# sourceMappingURL=main.css.map */

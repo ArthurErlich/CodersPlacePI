@@ -17,9 +17,9 @@ namespace codersPlace {
 
 
 
-    setIndexNumber(1.8);
+    setIndexNumber(1);
     createFooter();
-
+    createSiteLinks();
 
 
     //this is a new addition
@@ -40,8 +40,8 @@ namespace codersPlace {
     }
 
     function setIndexNumber(indexSpacing: number): void {
-        console.log(bodyTextElements);
-        console.log(document.querySelectorAll("bodyLink"));
+        // console.log(bodyTextElements);
+        // console.log(document.querySelectorAll("bodyLink"));
 
 
         for (let i = 0; i < (bodyTextElements.length + 1) * indexSpacing; i++) {
@@ -63,7 +63,7 @@ namespace codersPlace {
 function createFooter() {
     let footer: HTMLCollection = document.getElementsByTagName("footer")!;
 
-    if (footer === null) {
+    if (footer.length == 0) {
         return;
     }
 
@@ -85,3 +85,26 @@ function createFooter() {
     `;
 
 }
+function createSiteLinks() {
+   let siteLinks: HTMLCollection = document.getElementsByClassName("siteLinks")!;
+
+   if(siteLinks.length == 0){
+        return;
+   }
+   siteLinks[0].innerHTML = `
+   <div class="home">
+        <a href="index.html">
+            <img src="../icon/text-file-icon.svg" alt="TextFile"/>
+            <p>home.h</p>
+        </a>
+    </div>
+
+    <div class="home">
+    <a href="programs.html">
+        <img src="../icon/text-file-icon.svg" alt="TextFile"/>
+        <p>programs.h</p>
+    </a>
+    </div>
+   `;
+}
+
