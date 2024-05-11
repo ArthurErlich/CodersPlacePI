@@ -1,207 +1,239 @@
  @import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap'); //NOT DSVGO Comform
 
-body {
-    background-image: linear-gradient(#cecece, #979797);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+ body {
+     background-image: linear-gradient(#cecece, #979797);
+     background-repeat: no-repeat;
+     background-attachment: fixed;
 
-    color: #fff;
-    font-family: "Zen Kurenaido", sans-serif;
-    margin: 0;
-}
-@media screen and (max-width: 600px) {
-    .hero div h1{
-        max-width: 200px;
-    }
-}
+     color: #fff;
+     font-family: "Zen Kurenaido", sans-serif;
+     margin: 0;
+ }
 
-@media screen and (min-width: 600px) {
-    .window {
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-}
-@media screen and (min-width: 1200px) {
-    .window {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 1000px;
-    }
-}
+ @media screen and (max-width: 600px) {
+     .hero div h1 {
+         max-width: 200px;
+     }
+ }
 
-::selection {
-    background-color: #0000003a;
-}
+ @media screen and (min-width: 600px) {
+     .window {
+         margin-left: 50px;
+         margin-right: 50px;
+     }
+ }
 
-a {
-    text-decoration: none;
-    color: #fff;
-}
-a:hover {
-    color: #fff;
-    text-decoration:underline;
-    text-decoration-style: wavy;
-    text-decoration-color: rgb(255, 70, 70);
-}
+ @media screen and (min-width: 1200px) {
+     .window {
+         margin-left: auto;
+         margin-right: auto;
+         max-width: 1000px;
+     }
+ }
 
+ ::selection {
+     background-color: #0000003a;
+ }
 
-.hero {
-    text-align: center;
-}
-.hero div {
-    background-color: #2c2c2c;
-    width: fit-content;
-    margin: auto;
+ a {
+     text-decoration: none;
+     color: #fff;
+ }
 
-    border-radius: 15px 15px 0 0;
-}
-.hero div h1 {
-    margin: 0px 20px 0px 20px;
-}
-.hreoDrop {
-    //height: 20px;
-    border-radius: 5px;
-    background-color: #2c2c2c;
-}
-.hreoDropText {
-    margin-left: 5px;
-    height: 30px;
-    padding-top: 5px;
-}
-.hreoDropIcon {
-    float: right;
-    width: 13px;
-    height: 13px;
-    margin: 5px;
-    border-radius: 5px;
-    background-color: #fff;
-}
-.bodyContent {
-    //height:250px;
-    background-color: #8d8d8d;
-    color: #fff;
-    text-shadow: #2c2c2c 0px 0px 5px;
-
-    //display: flex;
-
-    height: fit-content;
-    font-size: 1.2em;
-    overflow: hidden;
-
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-#bodyIndex {
-    float: left;
-    width: 30px;
-    background-color: #4d4d4d;
-    text-shadow: #2c2c2c 0px 0px 5px;
-
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.clearfix::after {
-    content: "";
-    clear: both;
-}
+ a:hover {
+     color: #fff;
+     text-decoration: underline;
+     text-decoration-style: wavy;
+     text-decoration-color: rgb(255, 70, 70);
+ }
 
 
+ .hero {
+     text-align: center;
+ }
 
-.bodyContent p {
-    width: fit-content;
-    height: fit-content;
+ .hero div {
+     background-color: #2c2c2c;
+     width: fit-content;
+     margin: auto;
 
-    margin-left: 60px;
-    margin-right: 10px;
-    margin-top: 0;
-    margin-bottom: 0;
+     border-radius: 15px 15px 0 0;
+ }
 
-    //border-radius: 5px;
-    //background-color: #2c2c2c;
-}
-p a {
-    text-decoration: none;
-    color: #fff;
+ .hero div h1 {
+     margin: 0px 20px 0px 20px;
+ }
 
-    text-decoration: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: rgb(255, 70, 70);
-}
-p a:hover {
-    font-style: italic;
-    color: #fff;
+ .hreoDrop {
+     //height: 20px;
+     border-radius: 5px;
+     background-color: #2c2c2c;
+ }
 
-    text-decoration: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: rgb(255, 70, 70);
-}
-#linkToSozio {
-    font-weight: 900;
-}
+ .hreoDropText {
+     margin-left: 5px;
+     height: 30px;
+     padding-top: 5px;
+ }
 
-h2 {
-    display: inline;
-    font-size: 12pt;
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: 400;
-    margin: auto;
-}
-.window {
-    margin-top: 100px;
-}
+ .hreoDropIcon {
+     float: right;
+     width: 13px;
+     height: 13px;
+     margin: 5px;
+     border-radius: 5px;
+     background-color: #fff;
+ }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
-    background-color: #2c2c2c;
-    
-    // padding: 10px;
-    text-align: center;
-}
-.footerLinkGroupe{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 25%;
-    
-}
-.footerLinkItem{
-    margin: 5px;
-}
-.bodyContent h3{
-    display: inline;
-    font-size: 12pt;
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: 400;
-    margin: auto;
-}
+ .bodyContent {
+     //height:250px;
+     background-color: #8d8d8d;
+     color: #fff;
+     text-shadow: #2c2c2c 0px 0px 5px;
 
-.home{
-    display: block;
-    color: #2c2c2c;
-    margin: 15px;
-    min-width: 40px;
-    text-align: center;
-}
-.home a{
-    color: #2c2c2c;
-}
-.home p {
-    margin-top: -8px;
-    margin-bottom: 0;
-}
-.home img{
-    width: 30px;
-}
-.siteLinks{
-    display: flex;
-}
+     //display: flex;
+
+     height: fit-content;
+     font-size: 1.2em;
+     overflow: hidden;
+
+     border-bottom-left-radius: 5px;
+     border-bottom-right-radius: 5px;
+ }
+
+ #bodyIndex {
+     float: left;
+     width: 30px;
+     background-color: #4d4d4d;
+     text-shadow: #2c2c2c 0px 0px 5px;
+
+     padding-left: 10px;
+     padding-right: 10px;
+ }
+
+ .clearfix::after {
+     content: "";
+     clear: both;
+ }
+
+
+
+ .bodyContent p {
+     width: fit-content;
+     height: fit-content;
+
+     margin-left: 60px;
+     margin-right: 10px;
+     margin-top: 0;
+     margin-bottom: 0;
+
+     //border-radius: 5px;
+     //background-color: #2c2c2c;
+ }
+
+ p a {
+     text-decoration: none;
+     color: #fff;
+
+     text-decoration: underline;
+     text-decoration-style: wavy;
+     text-decoration-color: rgb(255, 70, 70);
+ }
+
+ p a:hover {
+     font-style: italic;
+     color: #fff;
+
+     text-decoration: underline;
+     text-decoration-style: wavy;
+     text-decoration-color: rgb(255, 70, 70);
+ }
+
+ #linkToSozio {
+     font-weight: 900;
+ }
+
+ h2 {
+     display: inline;
+     font-size: 12pt;
+     margin-block-start: 0px;
+     margin-block-end: 0px;
+     margin-inline-start: 0px;
+     margin-inline-end: 0px;
+     font-weight: 400;
+     margin: auto;
+ }
+
+ .window {
+     margin-top: 100px;
+ }
+
+ footer {
+     margin-top: 25px;
+     position: relative;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     width: 100%;
+     height: 100px;
+     background-color: #2c2c2c;
+
+     // padding: 10px;
+     text-align: center;
+ }
+
+ .footerLinkGroupe {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     width: 25%;
+
+ }
+
+ .footerLinkItem {
+     margin: 5px;
+ }
+
+ .bodyContent h3 {
+     display: inline;
+     font-size: 12pt;
+     margin-block-start: 0px;
+     margin-block-end: 0px;
+     margin-inline-start: 0px;
+     margin-inline-end: 0px;
+     font-weight: 400;
+     margin: auto;
+ }
+
+ .home {
+     display: block;
+     color: #2c2c2c;
+     margin: 15px;
+     min-width: 40px;
+     text-align: center;
+ }
+
+ .home a {
+     color: #2c2c2c;
+ }
+
+ .home p {
+     margin-top: -8px;
+     margin-bottom: 0;
+ }
+
+ .home img {
+     width: 30px;
+ }
+
+ .siteLinks {
+     display: flex;
+ }
+
+ #meIcon {
+     width: 150px;
+     border-radius: 100%;
+     float: right;
+     margin-right: 25px;
+     margin-top: 25px
+ }

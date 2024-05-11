@@ -41,6 +41,10 @@ var codersPlace;
         else {
             textHight = parseInt(window.getComputedStyle(paragrphElements[0]).fontSize, 10);
         }
+        let accumulatedPHight = textHight * (paragrphElements.length + 1);
+        console.log(accumulatedPHight);
+        console.log(bodyContentElements[0].g);
+        return;
         let rows = Math.round(bodyContentElements[0].offsetHeight / textHight);
         for (let i = 0; i < (rows); i++) {
             if (i <= 9) {

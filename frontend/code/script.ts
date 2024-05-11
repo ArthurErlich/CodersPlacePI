@@ -50,9 +50,13 @@ namespace codersPlace {
             textHight = parseInt(window.getComputedStyle(paragrphElements[0]).fontSize, 10);
         }
 
+        let accumulatedPHight = textHight * (paragrphElements.length+1);
+        console.log(accumulatedPHight);
+        console.log(bodyContentElements[0].g);
+        return;
         let rows = Math.round((<HTMLElement>bodyContentElements[0]).offsetHeight / textHight)
 
-        for (let i = 0; i < (rows ); i++) {
+        for (let i = 0; i < (rows); i++) {
             if (i <= 9) {
                 bodyIndexElement.innerText += "00" + i + "\n";
             } else if (i <= 99) {
