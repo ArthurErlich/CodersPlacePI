@@ -3,6 +3,8 @@ namespace codersPlace {
     const windowCloser: HTMLElement = document.getElementById("windowCloser")!;
     const windowOpener: HTMLElement = document.getElementById("windowOpener")!;
 
+    const textHight:number = 26;
+
     //check bodyTextElements name -> changed from bodyLinkt to bodyText
     let bodyIndexElement: HTMLElement = document.getElementById("bodyIndex")!;
     let bodyContentElements: HTMLCollection = document.getElementsByClassName("bodyContent")!;
@@ -41,41 +43,45 @@ namespace codersPlace {
     }
 
     function setIndexNumber(): void {
+        let nodeList:NodeList = bodyContentElements[0].childNodes;
+        let bodyHight:number = 0;
+        //let textHight = parseInt(window.getComputedStyle(paragrphElements[0]).fontSize, 10);
+        nodeList.forEach(node => {
+            if(node.nodeType === node.ELEMENT_NODE){
+                // console.log();
+                let element:HTMLElement = node as HTMLElement;
+                bodyHight += element.offsetHeight;
+            }
+        });
+        createRows(bodyHight/textHight);
+
         // console.log(bodyTextElements);
         // console.log(document.querySelectorAll("bodyLink"));
-        let textHight;
-        if (paragrphElements.length == 0) {
-            textHight = 1;
-        } else {
-            textHight = parseInt(window.getComputedStyle(paragrphElements[0]).fontSize, 10);
-        }
+        // let textHight;
+        // if (paragrphElements.length == 0) {
+        //     textHight = 1;
+        // } else {
+        //     textHight = parseInt(window.getComputedStyle(paragrphElements[0]).fontSize, 10);
+        // }
 
-        let accumulatedPHight = textHight * (paragrphElements.length+1);
-        console.log(accumulatedPHight);
-        console.log(bodyContentElements[0].g);
-        return;
-        let rows = Math.round((<HTMLElement>bodyContentElements[0]).offsetHeight / textHight)
+        // let accumulatedPHight = textHight * (paragrphElements.length+1);
+        // console.log(accumulatedPHight);
+        // console.log(bodyContentElements[0].childElementCount);
 
-        for (let i = 0; i < (rows); i++) {
-            if (i <= 9) {
-                bodyIndexElement.innerText += "00" + i + "\n";
-            } else if (i <= 99) {
-                bodyIndexElement.innerText += "0" + i + "\n";
-            } else {
-                bodyIndexElement.innerText += i.toString() + "\n";
-            }
-        }
-    }
-}
+        // let rows = Math.round(( accumulatedPHight/ textHight) //<HTMLElement>bodyContentElements[0]).offsetHeight
 
-function createFooter() {
-    let footer: HTMLCollection = document.getElementsByTagName("footer")!;
 
-    if (footer.length == 0) {
-        return;
     }
 
-    footer[0].innerHTML = ` 
+
+    function createFooter() {
+        let footer: HTMLCollection = document.getElementsByTagName("footer")!;
+
+        if (footer.length == 0) {
+            return;
+        }
+
+        footer[0].innerHTML = ` 
     <div class="footerLinkGroupe">
             <div class="footerLinkItem">
                <a href="datenschutz.html">Datenschutz</a> 
@@ -92,14 +98,14 @@ function createFooter() {
         </div>
     `;
 
-}
-function createSiteLinks() {
-    let siteLinks: HTMLCollection = document.getElementsByClassName("siteLinks")!;
-
-    if (siteLinks.length == 0) {
-        return;
     }
-    siteLinks[0].innerHTML = `
+    function createSiteLinks() {
+        let siteLinks: HTMLCollection = document.getElementsByClassName("siteLinks")!;
+
+        if (siteLinks.length == 0) {
+            return;
+        }
+        siteLinks[0].innerHTML = `
    <div class="home">
         <a href="index.html">
             <img src="../icon/text-file-icon.svg" alt="TextFile"/>
@@ -114,5 +120,18 @@ function createSiteLinks() {
     </a>
     </div>
    `;
-}
+    }
 
+    function createRows(rows: number): void {
+        for (let i = 0; i < (rows); i++) {
+            if (i <= 9) {
+                bodyIndexElement.innerText += "00" + i + "\n";
+            } else if (i <= 99) {
+                bodyIndexElement.innerText += "0" + i + "\n";
+            } else {
+                bodyIndexElement.innerText += i.toString() + "\n";
+            }
+        }
+    }
+
+}

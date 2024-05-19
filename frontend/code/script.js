@@ -3,6 +3,7 @@ var codersPlace;
 (function (codersPlace) {
     const windowCloser = document.getElementById("windowCloser");
     const windowOpener = document.getElementById("windowOpener");
+    const textHight = 26;
     //check bodyTextElements name -> changed from bodyLinkt to bodyText
     let bodyIndexElement = document.getElementById("bodyIndex");
     let bodyContentElements = document.getElementsByClassName("bodyContent");
@@ -32,39 +33,36 @@ var codersPlace;
         bodyIndexElement.style.display = "block";
     }
     function setIndexNumber() {
+        let nodeList = bodyContentElements[0].childNodes;
+        let bodyHight = 0;
+        //let textHight = parseInt(window.getComputedStyle(paragrphElements[0]).fontSize, 10);
+        nodeList.forEach(node => {
+            if (node.nodeType === node.ELEMENT_NODE) {
+                // console.log();
+                let element = node;
+                bodyHight += element.offsetHeight;
+            }
+        });
+        createRows(bodyHight / textHight);
         // console.log(bodyTextElements);
         // console.log(document.querySelectorAll("bodyLink"));
-        let textHight;
-        if (paragrphElements.length == 0) {
-            textHight = 1;
-        }
-        else {
-            textHight = parseInt(window.getComputedStyle(paragrphElements[0]).fontSize, 10);
-        }
-        let accumulatedPHight = textHight * (paragrphElements.length + 1);
-        console.log(accumulatedPHight);
-        console.log(bodyContentElements[0].g);
-        return;
-        let rows = Math.round(bodyContentElements[0].offsetHeight / textHight);
-        for (let i = 0; i < (rows); i++) {
-            if (i <= 9) {
-                bodyIndexElement.innerText += "00" + i + "\n";
-            }
-            else if (i <= 99) {
-                bodyIndexElement.innerText += "0" + i + "\n";
-            }
-            else {
-                bodyIndexElement.innerText += i.toString() + "\n";
-            }
-        }
+        // let textHight;
+        // if (paragrphElements.length == 0) {
+        //     textHight = 1;
+        // } else {
+        //     textHight = parseInt(window.getComputedStyle(paragrphElements[0]).fontSize, 10);
+        // }
+        // let accumulatedPHight = textHight * (paragrphElements.length+1);
+        // console.log(accumulatedPHight);
+        // console.log(bodyContentElements[0].childElementCount);
+        // let rows = Math.round(( accumulatedPHight/ textHight) //<HTMLElement>bodyContentElements[0]).offsetHeight
     }
-})(codersPlace || (codersPlace = {}));
-function createFooter() {
-    let footer = document.getElementsByTagName("footer");
-    if (footer.length == 0) {
-        return;
-    }
-    footer[0].innerHTML = ` 
+    function createFooter() {
+        let footer = document.getElementsByTagName("footer");
+        if (footer.length == 0) {
+            return;
+        }
+        footer[0].innerHTML = ` 
     <div class="footerLinkGroupe">
             <div class="footerLinkItem">
                <a href="datenschutz.html">Datenschutz</a> 
@@ -80,13 +78,13 @@ function createFooter() {
         <div class="footerLinkGroupe">
         </div>
     `;
-}
-function createSiteLinks() {
-    let siteLinks = document.getElementsByClassName("siteLinks");
-    if (siteLinks.length == 0) {
-        return;
     }
-    siteLinks[0].innerHTML = `
+    function createSiteLinks() {
+        let siteLinks = document.getElementsByClassName("siteLinks");
+        if (siteLinks.length == 0) {
+            return;
+        }
+        siteLinks[0].innerHTML = `
    <div class="home">
         <a href="index.html">
             <img src="../icon/text-file-icon.svg" alt="TextFile"/>
@@ -101,4 +99,18 @@ function createSiteLinks() {
     </a>
     </div>
    `;
-}
+    }
+    function createRows(rows) {
+        for (let i = 0; i < (rows); i++) {
+            if (i <= 9) {
+                bodyIndexElement.innerText += "00" + i + "\n";
+            }
+            else if (i <= 99) {
+                bodyIndexElement.innerText += "0" + i + "\n";
+            }
+            else {
+                bodyIndexElement.innerText += i.toString() + "\n";
+            }
+        }
+    }
+})(codersPlace || (codersPlace = {}));
