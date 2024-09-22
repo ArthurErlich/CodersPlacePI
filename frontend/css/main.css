@@ -64,6 +64,7 @@ main {
 
 #blog_card_container>a {
     color: (var(--standard-text-color));
+    text-decoration: none;
 }
 
 #blog_card_container>a:hover {
@@ -76,13 +77,14 @@ main {
     box-shadow: var(--default-shadow);
     padding: 15px;
     border-radius: 5px;
-    text-decoration: none;
 }
 
 .blog_card:hover {
     box-shadow: var(--hover-shadow);
 }
+.blog_card_date{
 
+}
 #blog_date {
     text-align: left;
     font-style: italic;
