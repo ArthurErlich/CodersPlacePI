@@ -1,4 +1,4 @@
-:root{
+:root {
     --standard-text-color: #d3d3d3;
     --main-brand-color: #1cff1c;
     --secondary-brand-color: #a2ffa2;
@@ -9,18 +9,20 @@
 
     --main-width: 900px;
 }
-@font-face{
+
+@font-face {
     font-family: "Zen Kurenaido";
     src: url("../fonts/ZenKurenaido-Regular.ttf");
 }
 
-body{
+body {
     background-color: var(--main-background);
     color: var(--standard-text-color);
     margin: 0;
     font-family: "Zen Kurenaido", sans-serif;
 }
-nav{
+
+nav {
     min-height: 50px;
     display: flex;
     align-items: center;
@@ -28,59 +30,70 @@ nav{
     gap: 0px 20px;
     box-shadow: var(--default-shadow);
 }
-a{
+
+a {
     color: var(--standard-text-color);
     text-decoration: underline;
 }
-hr{
+
+hr {
     border-radius: 2%;
-    
+
 }
-a:hover{
+
+a:hover {
     color: var(--standard-text-color);
 }
 
-main{
+main {
     max-width: var(--main-width);
     margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
 }
 
-#blog_card_container{
+#blog_card_container {
     display: flex;
     justify-content: center;
     gap: 10px;
 }
-#blog_card_container > a{
-    color: (var(--standard-text-color));
-}
-#blog_card_container > a:hover{
+
+#blog_card_container>a {
     color: (var(--standard-text-color));
 }
 
-.blog_card{
+#blog_card_container>a:hover {
+    color: (var(--standard-text-color));
+}
+
+.blog_card {
     width: 300px;
     height: 300px;
     box-shadow: var(--default-shadow);
     padding: 15px;
     border-radius: 5px;
 }
-.blog_card:hover{
+
+.blog_card:hover {
     box-shadow: var(--hover-shadow);
 }
-#blog_date{
+
+#blog_date {
     text-align: left;
     font-style: italic;
 }
-.blog_image_right{
+
+.blog_image_right {
     display: flex;
     justify-content: baseline;
     gap: 0px 20px;
 }
-.blog_image_right > img {
+
+.blog_image_right>img {
     width: 300px;
+    height: min-content;
 }
-.blog_image_right > p {
+
+.blog_image_right>p {
     width: 600px;
 }
