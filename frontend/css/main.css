@@ -4,8 +4,8 @@
     --secondary-brand-color: #a2ffa2;
 
     --main-background: #333333;
-    --default-shadow: 0px 0px 8px 0px #000000;
-    --hover-shadow: 2px 2px 8px 0px #000000;
+    --default-shadow: 2px 2px 5px 0px #000000;
+    --hover-shadow: 3px 3px 5px 0px #000000;
 
     --main-width: 900px;
 }
@@ -29,6 +29,10 @@ nav {
     justify-content: center;
     gap: 0px 20px;
     box-shadow: var(--default-shadow);
+}
+
+nav > a{
+    text-decoration: none;
 }
 
 a {
@@ -72,6 +76,7 @@ main {
     box-shadow: var(--default-shadow);
     padding: 15px;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 .blog_card:hover {
