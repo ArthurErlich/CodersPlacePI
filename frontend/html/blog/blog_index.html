@@ -5,38 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haylan's Blog Vault</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/frontend/images/AE_Gezeichnet.png" type="image/x-icon">
     <!--css preload-->
     <link rel="preload" href="/frontend/css/main.css" as="style">
     <link rel="stylesheet" href="/frontend/css/main.css">
     <script src="/frontend/code/main.js"></script>
+    <script src="/frontend/code/CustomElements.js"></script>
 </head>
 
-<header>
-    <nav>
-        <a href="/frontend/html/index.html">
-            <div>Home</div>
-        </a>
-        <a href="/frontend//html/blog/blog_index.html">
-            <div>Blog</div>
-        </a>
-    </nav>
-</header>
-<main id="block-index">
-    <div id="blog_card_container">
-        <a href="blog_articles/blog_my_first_post_t-1726909068197.html">
-            <div class="blog_card" data-blog-date="1726909068197">
-                <h2>First Block Post</h2>
-                <p>
-                    This is my first Blockpost on my self made website.
-                </p>
-                <p class="blog_card_date">
-                    21.09.2024
-                </p>
-            </div>
-        </a>
-    </div>
-</main>
-<footer>
-
-</footer>
+<body>
+    <header>
+        <custom-header></custom-header>
+    </header>
+    <main id="block-index">
+        <div id="blog_card_container">
+            <a href="blog_articles/blog_my_first_post_t-1726909068197.html">
+                <div class="blog_card" data-blog-date="1726909068197">
+                    <h2>First Block Post</h2>
+                    <p>
+                        This is my first Blockpost on my self made website.
+                    </p>
+                    <p class="blog_card_date">
+                        21.09.2024
+                    </p>
+                </div>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <custom-footer></custom-footer>
+    </footer>    
+</body>
