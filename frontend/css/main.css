@@ -4,18 +4,21 @@
     --secondary-brand-color: #a2ffa2;
 
     --main-background: #333333;
-    --default-shadow: 2px 2px 5px 0px #000000;
-    --hover-shadow: 3px 3px 5px 0px #000000;
+    --secondary-background: #353535;
+    --default-shadow: 2px 2px 5px 0px #00000080;
+    --hover-shadow: 3px 3px 5px 0px #00000080;
 
     --main-width: 900px;
 }
 
 @font-face {
-    font-family: "Zen Kurenaido";
-    src: url("../fonts/ZenKurenaido-Regular.ttf");
+    /* font-family: "Zen Kurenaido";
+    src: url("../fonts/ZenKurenaido-Regular.ttf"); */
+    font-family: "Fira Code";
+    src: url("/frontend/fonts/FiraCode-Medium.ttf");
 }
 
-html{
+html {
     min-height: 100vh
 }
 
@@ -23,11 +26,15 @@ body {
     background-color: var(--main-background);
     color: var(--standard-text-color);
     margin: 0;
-    font-family: "Zen Kurenaido", sans-serif;
-    
+    font-family: "Fira Code", sans-serif;
+    font-weight: lighter;
+
     display: grid;
     height: 100vh;
     grid-template-rows: auto 1fr auto;
+}
+header,footer{
+    background-color: var(--secondary-background);
 }
 
 nav {
@@ -39,7 +46,7 @@ nav {
     box-shadow: var(--default-shadow);
 }
 
-nav > a{
+nav>a {
     text-decoration: none;
 }
 
@@ -52,12 +59,22 @@ hr {
     border-radius: 2%;
 
 }
+
 footer {
     width: 100%;
     min-height: 50px;
 
     box-shadow: var(--default-shadow);
     margin-top: 25px;
+}
+
+custom-footer {
+    display: flex;
+}
+
+custom-footer>div {
+    min-width: 480px;
+    padding: 5px;
 }
 
 a:hover {
@@ -97,9 +114,9 @@ main {
 .blog_card:hover {
     box-shadow: var(--hover-shadow);
 }
-.blog_card_date{
 
-}
+.blog_card_date {}
+
 #blog_date {
     text-align: left;
     font-style: italic;
@@ -118,4 +135,13 @@ main {
 
 .blog_image_right>p {
     width: 600px;
+}
+.landingpage_hero_me_logo{
+    display: flex;
+    justify-content: center;
+
+}
+.landingpage_hero_me_logo > img{
+    border-radius: 50%;
+    width: 20%;
 }

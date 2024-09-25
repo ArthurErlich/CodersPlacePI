@@ -4,7 +4,11 @@ namespace codersPlace {
             super();
         }
         connectedCallback() {
-            this.innerHTML = `<br>Hi, i am the FOOTER!<br>`;
+            this.innerHTML = `
+            <div></div>
+            <div></div>
+            <div></div>
+            `;
         }
     }
     class NaviElement extends HTMLElement{
@@ -16,6 +20,7 @@ namespace codersPlace {
             <nav>
                 <a href="/frontend/html/index.html"><div>Home</div></a>
                 <a href="/frontend/html/blog/blog_index.html"><div>Blog</div></a>
+                <a href="/frontend/html/games/games_index.html<div>Games</div></a>
                 <a href="/frontend/html/about-me.html"><div>About Me</div></a>
             </nav>
             `;
