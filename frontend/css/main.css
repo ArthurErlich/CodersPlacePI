@@ -93,6 +93,11 @@ main {
     margin-right: auto;
 }
 
+blockquote {
+    padding-left: 5px;
+    border-left: 3px solid var(--standard-text-color)
+}
+
 #blog_card_container {
     display: flex;
     justify-content: center;
@@ -151,4 +156,20 @@ main {
 .landingpage_hero_me_logo>img {
     border-radius: 50%;
     width: 20%;
+}
+
+#salary_report {
+    text-align: left;
+    border-collapse: collapse;
+}
+
+#salary_report th {
+    border-bottom: 3px solid var(--standard-text-color);
+}
+
+#salary_report th,
+#salary_report td {
+    min-width: 150px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
