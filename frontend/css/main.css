@@ -33,7 +33,9 @@ body {
     height: 100vh;
     grid-template-rows: auto 1fr auto;
 }
-header,footer{
+
+header,
+footer {
     background-color: var(--secondary-background);
 }
 
@@ -75,6 +77,7 @@ custom-footer {
 custom-footer>div {
     min-width: 480px;
     padding: 5px;
+    text-align: center;
 }
 
 a:hover {
@@ -136,12 +139,14 @@ main {
 .blog_image_right>p {
     width: 600px;
 }
-.landingpage_hero_me_logo{
+
+.landingpage_hero_me_logo {
     display: flex;
     justify-content: center;
 
 }
-.landingpage_hero_me_logo > img{
+
+.landingpage_hero_me_logo>img {
     border-radius: 50%;
     width: 20%;
 }

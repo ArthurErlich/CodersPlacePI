@@ -7,7 +7,7 @@ namespace codersPlace {
             this.innerHTML = `
             <div></div>
             <div></div>
-            <div></div>
+            <div><a href"https://github.com/ArthurErlich">GitHub</div>
             `;
         }
     }
