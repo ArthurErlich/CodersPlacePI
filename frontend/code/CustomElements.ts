@@ -6,8 +6,8 @@ namespace codersPlace {
         connectedCallback() {
             this.innerHTML = `
             <div></div>
-            <div></div>
-            <div><a href"https://github.com/ArthurErlich">GitHub</div>
+            <div><a href="https://github.com/ArthurErlich">GitHub</a></div>
+            <div><a href="/frontend/html/salary_transparency.html">Salary Transparency</div>
             `;
         }
     }
@@ -21,7 +21,7 @@ namespace codersPlace {
                 <a href="/frontend/html/index.html"><div>Home</div></a>
                 <a href="/frontend/html/blog/blog_index.html"><div>Blog</div></a>
                 <a href="/frontend/html/games/games_index.html<div>Games</div></a>
-                <a href="/frontend/html/about-me.html"><div>About Me</div></a>
+                <a href="/frontend/html/about_me.html"><div>About Me</div></a>
             </nav>
             `;
         }

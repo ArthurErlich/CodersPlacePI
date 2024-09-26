@@ -72,6 +72,8 @@ footer {
 
 custom-footer {
     display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 custom-footer>div {
