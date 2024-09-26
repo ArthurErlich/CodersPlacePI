@@ -5,7 +5,6 @@ namespace codersPlace {
         }
         connectedCallback() {
             this.innerHTML = `
-            <div></div>
             <div><a href="https://github.com/ArthurErlich">GitHub</a></div>
             <div><a href="/frontend/html/salary_transparency.html">Salary Transparency</div>
             `;

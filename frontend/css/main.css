@@ -72,13 +72,15 @@ footer {
 
 custom-footer {
     display: flex;
+    justify-content: center;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
 custom-footer>div {
     min-width: 480px;
-    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
 }
 
@@ -94,8 +96,13 @@ main {
 }
 
 blockquote {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #0000008d;
+}
+blockquote > div{
+    border-left: 3px solid var(--standard-text-color);
     padding-left: 5px;
-    border-left: 3px solid var(--standard-text-color)
 }
 
 #blog_card_container {
@@ -170,6 +177,8 @@ blockquote {
 #salary_report th,
 #salary_report td {
     min-width: 150px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 15px;
+    padding-top:  5px;
+    padding-bottom:  5px;
+    padding-right: 15px;
 }
