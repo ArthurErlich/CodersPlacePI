@@ -7,7 +7,9 @@ var codersPlace;
         }
         connectedCallback() {
             this.innerHTML = `
-            
+            <div></div>
+            <div></div>
+            <div><a href"https://github.com/ArthurErlich">GitHub</div>
             `;
         }
     }
