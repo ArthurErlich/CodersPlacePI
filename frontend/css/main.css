@@ -138,8 +138,8 @@ blockquote>div {
     box-shadow: var(--hover-shadow);
 }
 
-.blog_card > img{
-    border-radius: 5px;
+.blog_card>img {
+    var(--card-border);
     max-width: 256px;
 }
 
@@ -168,20 +168,24 @@ blockquote>div {
     display: flex;
     justify-content: center;
 }
+
 .landingpage_hero_me_logo>img {
     border-radius: 50%;
     width: 20%;
 }
-#ladginpage_homefuge_spinner{
-  max-width: 150px;  
-  border-radius: 5px;
+
+#ladginpage_homefuge_spinner {
+    max-width: 150px;
+    border-radius: var(--card-border);
 }
-.github_card{
-    border-radius: 5px;
+
+.github_card {
+    border-radius: var(--card-border);
     box-shadow: var(--default-shadow);
     padding: 5px 10px 5px 10px;
     background-color: var(--secondary-background);
 }
+
 #salary_report {
     text-align: left;
     border-collapse: collapse;
@@ -202,14 +206,16 @@ blockquote>div {
     padding-bottom: 5px;
     padding-right: 15px;
 }
-#changlog_container{
+
+#changlog_container {
     display: flex;
     flex-wrap: wrap;
     align-items: start;
     justify-content: center;
     gap: 10px;
 }
-.changelog_card{
+
+.changelog_card {
     box-shadow: var(--default-shadow);
     padding: 10px;
     border-radius: var(--card-border);
