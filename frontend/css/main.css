@@ -129,10 +129,16 @@ blockquote>div {
     box-shadow: var(--default-shadow);
     padding: 15px;
     border-radius: 5px;
+    background-color: var(--secondary-background);
 }
 
 .blog_card:hover {
     box-shadow: var(--hover-shadow);
+}
+
+.blog_card > img{
+    border-radius: 5px;
+    max-width: 256px;
 }
 
 #blog_date {
