@@ -9,6 +9,8 @@
     --hover-shadow: 3px 3px 5px 0px #00000080;
 
     --main-width: 900px;
+
+    --card-border: 5px;
 }
 
 @font-face {
@@ -99,7 +101,7 @@ main {
 
 blockquote {
     padding: 10px;
-    border-radius: 5px;
+    border-radius: var(--card-border);
     background-color: #0000008d;
 }
 
@@ -128,7 +130,7 @@ blockquote>div {
     height: 300px;
     box-shadow: var(--default-shadow);
     padding: 15px;
-    border-radius: 5px;
+    border-radius: var(--card-border);
 }
 
 .blog_card:hover {
@@ -186,4 +188,17 @@ blockquote>div {
     padding-top: 5px;
     padding-bottom: 5px;
     padding-right: 15px;
+}
+#changlog_container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+}
+.changelog_card{
+    box-shadow: var(--default-shadow);
+    padding: 10px;
+    border-radius: var(--card-border);
+    min-width: calc(1920px/6);
 }
