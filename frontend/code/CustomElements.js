@@ -9,6 +9,7 @@ var codersPlace;
             this.innerHTML = `
             <div><a href="https://github.com/ArthurErlich">GitHub</a></div>
             <div><a href="/frontend/html/salary_transparency.html">Salary Transparency</a></div>
+            <div><a href="/frontend/html/changelog.html">changelog</a></div>
             `;
         }
     }
