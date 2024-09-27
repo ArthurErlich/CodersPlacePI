@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haylan's home Blog</title>
-    <link rel="icon" href="/frontend/images/AE_Gezeichnet.png" type="image/x-icon">
+    <link rel="icon" href="/frontend/images/AE_Gezeichnet_Favicon.jpg" type="image/x-icon">
     <!--css preload-->
     <link rel="preload" href="/frontend/css/main.css" as="style">
+    <!--font preload-->
+    <link rel="preload" href="/frontend/css/main.css" as="style">
+    <link rel="preload" href="/frontend/fonts/FiraCode-Medium.ttf" type="font/ttf" as="font" crossorigin>
     <link rel="stylesheet" href="/frontend/css/main.css">
     <script src="/frontend/code/main.js"></script>
     <script src="/frontend/code/CustomElements.js"></script>
@@ -35,12 +38,29 @@
         <hr>
         <h2>Current Work</h2>
         <p>
-            I have been working as a trainee as a full-stack developer at ditegra GmbH in Radolfzell since 2023.
+            I am working as a trainee to be a full-stack developer at ditegra GmbH in Radolfzell since 2023.
         </p>
         <h2>My Personal Projects</h2>
         <p>
             Here is just a subset of my favorite private Projects.
         </p>
+        <div class="github_card">
+
+            <h3><a href="https://github.com/ArthurErlich/HomeFudge">My HomeFudge Project</a> </h3>
+            <img id="ladginpage_homefuge_spinner" src="https://github.com/ArthurErlich/HomeFudge/raw/refs/heads/main/HomeFudge/Images/FudgeHome_LoadingHackSpinner.apng" alt="HomeFudge Logo" loading="lazy">
+            <p>
+                This was a little experiment in my studie time. I Tried out to create a game with physics in the
+                browser.
+                Loading the game will take some time. But you can have a good look at the code base.
+            </p>
+            <p>
+                I also want to proper mention <a href="https://jirkadelloro.github.io/">Dell'Oro-Friedl</a>.
+                He and a lot of students worked on this amazing <a
+                    href="https://jirkadelloro.github.io/FUDGE/">FUDGE</a> framework.
+                Without Fudge, my game test wouldn't be a reality.
+
+            </p>
+        </div>
     </main>
     <footer>
         <custom-footer></custom-footer>
