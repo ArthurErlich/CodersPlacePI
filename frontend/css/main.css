@@ -159,14 +159,21 @@ blockquote>div {
 .landingpage_hero_me_logo {
     display: flex;
     justify-content: center;
-
 }
-
 .landingpage_hero_me_logo>img {
     border-radius: 50%;
     width: 20%;
 }
-
+#ladginpage_homefuge_spinner{
+  max-width: 150px;  
+  border-radius: 5px;
+}
+.github_card{
+    border-radius: 5px;
+    box-shadow: var(--default-shadow);
+    padding: 5px 10px 5px 10px;
+    background-color: var(--secondary-background);
+}
 #salary_report {
     text-align: left;
     border-collapse: collapse;
