@@ -86,6 +86,9 @@ custom-footer>div {
     padding-bottom: 10px;
     text-align: center;
 }
+custom-footer a{
+    text-decoration: none;
+}
 
 a:hover {
     color: var(--standard-text-color);
@@ -174,8 +177,12 @@ blockquote>div {
     width: 20%;
 }
 
-#ladginpage_homefuge_spinner {
+#landingpage_homefuge_spinner {
     max-width: 150px;
+    border-radius: var(--card-border);
+}
+#landingpage_homefuge_game{
+    max-width: 300px;
     border-radius: var(--card-border);
 }
 
@@ -184,6 +191,8 @@ blockquote>div {
     box-shadow: var(--default-shadow);
     padding: 5px 10px 5px 10px;
     background-color: var(--secondary-background);
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 #salary_report {
@@ -220,4 +229,11 @@ blockquote>div {
     padding: 10px;
     border-radius: var(--card-border);
     min-width: calc(1920px/6);
+}
+.image_row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
 }
