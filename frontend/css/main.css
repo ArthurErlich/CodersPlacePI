@@ -86,7 +86,8 @@ custom-footer>div {
     padding-bottom: 10px;
     text-align: center;
 }
-custom-footer a{
+
+custom-footer a {
     text-decoration: none;
 }
 
@@ -169,9 +170,17 @@ blockquote>div {
     max-width: 500px;
 }
 
-#blog_post img{
+.img_full_width>img {
+    width: calc(var(--main-width)*0.5);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+#blog_post img {
     border-radius: var(--card-border);
 }
+
 .landingpage_hero_me_logo {
     display: flex;
     justify-content: center;
@@ -186,7 +195,8 @@ blockquote>div {
     max-width: 150px;
     border-radius: var(--card-border);
 }
-#landingpage_homefuge_game{
+
+#landingpage_homefuge_game {
     max-width: 300px;
     border-radius: var(--card-border);
 }
@@ -237,14 +247,16 @@ blockquote>div {
     background-color: var(--secondary-background);
     flex-grow: 1
 }
-.image_row{
+
+.image_row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 10px;
     justify-content: center;
 }
-code{
+
+code {
     background-color: #0a0a0a;
     border-radius: 2px;
     padding: 5px;
