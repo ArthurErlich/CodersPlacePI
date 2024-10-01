@@ -221,7 +221,7 @@ blockquote>div {
     flex-wrap: wrap;
     align-items: start;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .changelog_card {
@@ -229,6 +229,8 @@ blockquote>div {
     padding: 10px;
     border-radius: var(--card-border);
     min-width: calc(1920px/6);
+    background-color: var(--secondary-background);
+    flex-grow: 1
 }
 .image_row{
     display: flex;
@@ -236,4 +238,9 @@ blockquote>div {
     align-items: center;
     gap: 10px;
     justify-content: center;
+}
+code{
+    background-color: #0a0a0a;
+    border-radius: 2px;
+    padding: 5px;
 }
