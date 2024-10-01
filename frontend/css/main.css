@@ -135,6 +135,7 @@ blockquote>div {
     padding: 15px;
     border-radius: var(--card-border);
     background-color: var(--secondary-background);
+    overflow: hidden;
 }
 
 .blog_card:hover {
@@ -142,8 +143,9 @@ blockquote>div {
 }
 
 .blog_card>img {
-    var(--card-border);
+    border-radius: var(--card-border);
     max-width: 256px;
+    max-height: 128px;
 }
 
 #blog_date {
@@ -167,6 +169,9 @@ blockquote>div {
     max-width: 500px;
 }
 
+#blog_post img{
+    border-radius: var(--card-border);
+}
 .landingpage_hero_me_logo {
     display: flex;
     justify-content: center;
