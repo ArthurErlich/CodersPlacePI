@@ -20,8 +20,13 @@
     src: url("/frontend/fonts/FiraCode-Medium.ttf");
 }
 
+img {
+    max-width: 100%;
+}
+
 html {
-    min-height: 100vh
+    min-height: 100vh;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -86,7 +91,8 @@ custom-footer>div {
     padding-bottom: 10px;
     text-align: center;
 }
-custom-footer a{
+
+custom-footer a {
     text-decoration: none;
 }
 
@@ -135,6 +141,7 @@ blockquote>div {
     padding: 15px;
     border-radius: var(--card-border);
     background-color: var(--secondary-background);
+    overflow: hidden;
 }
 
 .blog_card:hover {
@@ -142,8 +149,9 @@ blockquote>div {
 }
 
 .blog_card>img {
-    var(--card-border);
+    border-radius: var(--card-border);
     max-width: 256px;
+    max-height: 128px;
 }
 
 #blog_date {
@@ -151,20 +159,56 @@ blockquote>div {
     font-style: italic;
 }
 
-.blog_image_right {
+.blog_image_text {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 0px 20px;
 }
 
-.blog_image_right>img {
+.blog_image_text>img {
     max-width: 300px;
     height: min-content;
 }
 
-.blog_image_right>p {
+.blog_image_text>p {
     max-width: 500px;
+}
+
+.blog_image_text>div {
+    max-width: 500px;
+}
+
+.img_full_width>img {
+    width: calc(var(--main-width)*0.5);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+.imgs_row_2,
+.imgs_row_3,
+.imgs_row_4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.imgs_row_2>img {
+    max-width: calc(var(--main-width) / 2 - 20px);
+}
+
+.imgs_row_3>img {
+    max-width: calc(var(--main-width) / 3 - 30px);
+}
+
+.imgs_row_4>img {
+    max-width: calc(var(--main-width) / 4 - 40px);
+}
+
+#blog_post img {
+    border-radius: var(--card-border);
 }
 
 .landingpage_hero_me_logo {
@@ -181,7 +225,8 @@ blockquote>div {
     max-width: 150px;
     border-radius: var(--card-border);
 }
-#landingpage_homefuge_game{
+
+#landingpage_homefuge_game {
     max-width: 300px;
     border-radius: var(--card-border);
 }
@@ -232,14 +277,16 @@ blockquote>div {
     background-color: var(--secondary-background);
     flex-grow: 1
 }
-.image_row{
+
+.image_row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 10px;
     justify-content: center;
 }
-code{
+
+code {
     background-color: #0a0a0a;
     border-radius: 2px;
     padding: 5px;
