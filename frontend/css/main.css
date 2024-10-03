@@ -123,6 +123,7 @@ blockquote>div {
     display: flex;
     justify-content: center;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 #blog_card_container>a {
