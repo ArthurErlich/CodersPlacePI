@@ -20,8 +20,13 @@
     src: url("/frontend/fonts/FiraCode-Medium.ttf");
 }
 
+img {
+    max-width: 100%;
+}
+
 html {
-    min-height: 100vh
+    min-height: 100vh;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -154,19 +159,23 @@ blockquote>div {
     font-style: italic;
 }
 
-.blog_image_right {
+.blog_image_text {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 0px 20px;
 }
 
-.blog_image_right>img {
+.blog_image_text>img {
     max-width: 300px;
     height: min-content;
 }
 
-.blog_image_right>p {
+.blog_image_text>p {
+    max-width: 500px;
+}
+
+.blog_image_text>div {
     max-width: 500px;
 }
 
@@ -175,6 +184,27 @@ blockquote>div {
     margin-left: auto;
     margin-right: auto;
     display: flex;
+}
+
+.imgs_row_2,
+.imgs_row_3,
+.imgs_row_4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.imgs_row_2>img {
+    max-width: calc(var(--main-width) / 2 - 20px);
+}
+
+.imgs_row_3>img {
+    max-width: calc(var(--main-width) / 3 - 30px);
+}
+
+.imgs_row_4>img {
+    max-width: calc(var(--main-width) / 4 - 40px);
 }
 
 #blog_post img {
