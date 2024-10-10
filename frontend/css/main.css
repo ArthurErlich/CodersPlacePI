@@ -20,6 +20,18 @@
     src: url("/frontend/fonts/FiraCode-Medium.ttf");
 }
 
+@media screen and (max-width: 900px) {
+    :root {
+        --main-width: 600px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --main-width: 370px;
+    }
+}
+
 img {
     max-width: 100%;
 }
