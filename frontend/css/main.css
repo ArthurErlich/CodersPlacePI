@@ -24,8 +24,6 @@ Future Light Color Schema
 */
 
 @font-face {
-    /* font-family: "Zen Kurenaido";
-    src: url("../fonts/ZenKurenaido-Regular.ttf"); */
     font-family: "Fira Code";
     src: url("/frontend/fonts/FiraCode-Medium.ttf");
 }
