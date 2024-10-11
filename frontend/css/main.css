@@ -4,7 +4,7 @@
     --secondary-brand-color: #a2ffa2;
 
     --main-background: #333333;
-    --secondary-background: #353535;
+    --secondary-background: #3a3a3a;
     --default-shadow: 2px 2px 5px 0px #00000080;
     --hover-shadow: 3px 3px 5px 0px #00000080;
 
@@ -205,7 +205,7 @@ blockquote>div {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .imgs_row_2>img {
