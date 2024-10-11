@@ -13,6 +13,16 @@
     --card-border: 5px;
 }
 
+/*
+Future Light Color Schema
+    :root {
+        --main-background: #fefefe;
+        --secondary-background: #f2f2f2;
+        --standard-text-color: #333333a;
+
+    }
+*/
+
 @font-face {
     /* font-family: "Zen Kurenaido";
     src: url("../fonts/ZenKurenaido-Regular.ttf"); */
