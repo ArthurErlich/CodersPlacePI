@@ -138,6 +138,9 @@ blockquote>div {
     border-left: 3px solid var(--standard-text-color);
     padding-left: 5px;
 }
+#imageDialog{
+    
+}
 
 #blog_card_container {
     display: flex;
