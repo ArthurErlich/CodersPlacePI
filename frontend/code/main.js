@@ -1,9 +1,19 @@
 var codersPlace;
 (function (codersPlace) {
     let imageList = document.getElementsByTagName("img");
-    console.log(imageList);
+    let imageDialog = document.getElementById("imageDialog");
+    //DEBUG DIALOG FOR STYLING
+    //TODO:REMOVE!
+    imageDialog.showModal();
+    //
     addFullScreenImageModal();
     function addFullScreenImageModal() {
+        //avoid adding the event on images when the dialog/modal element is missing.
+        if (imageDialog == null) {
+            console.warn("imageDialog not found on this page");
+            return;
+        }
+        //add on click functionality
         if (imageList.length == 0) {
             return;
         }
@@ -13,11 +23,12 @@ var codersPlace;
                 let img;
                 try {
                     img = imgEvent;
-                    console.log(img.src);
                 }
                 catch (error) {
                     return;
                 }
+                console.log(img.src);
+                imageDialog.showModal();
             });
         }
     }
