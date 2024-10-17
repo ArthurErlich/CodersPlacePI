@@ -4,7 +4,7 @@ namespace codersPlace {
 
     //DEBUG DIALOG FOR STYLING
     //TODO:REMOVE!
-    imageDialog.showModal();
+    showDialog();
     //
     addFullScreenImageModal();
 
@@ -27,10 +27,14 @@ namespace codersPlace {
                     img = imgEvent as HTMLImageElement;
                 } catch (error) {
                     return;
+                    console.log(img.src);
                 }
-                console.log(img.src);
-                imageDialog.showModal();
             });
         }
+    }
+
+    function showDialog(): void {
+        document.body.style.overflow = "hidden";
+        imageDialog.showModal();
     }
 }

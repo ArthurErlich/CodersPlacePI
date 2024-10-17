@@ -138,8 +138,17 @@ blockquote>div {
     border-left: 3px solid var(--standard-text-color);
     padding-left: 5px;
 }
-#imageDialog{
-    
+#imageDialog {
+    width: 50%;
+    height: 50%;
+    background-color: transparent;
+    border: none;
+    outline:none;
+}
+
+#imageDialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
 }
 
 #blog_card_container {

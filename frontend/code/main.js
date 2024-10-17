@@ -4,7 +4,7 @@ var codersPlace;
     let imageDialog = document.getElementById("imageDialog");
     //DEBUG DIALOG FOR STYLING
     //TODO:REMOVE!
-    imageDialog.showModal();
+    showDialog();
     //
     addFullScreenImageModal();
     function addFullScreenImageModal() {
@@ -26,10 +26,13 @@ var codersPlace;
                 }
                 catch (error) {
                     return;
+                    console.log(img.src);
                 }
-                console.log(img.src);
-                imageDialog.showModal();
             });
         }
+    }
+    function showDialog() {
+        document.body.style.overflow = "hidden";
+        imageDialog.showModal();
     }
 })(codersPlace || (codersPlace = {}));
