@@ -1,4 +1,3 @@
-"use strict";
 var codersPlace;
 (function (codersPlace) {
     class NaviElement extends HTMLElement {
