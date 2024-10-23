@@ -27,20 +27,28 @@ namespace codersPlace {
         }
         public showDialog(event: Event): void {
             let imgEvent: EventTarget = event.target;
-            let img: HTMLImageElement;
+            let newImageElement: HTMLImageElement;
+            let oldImageElements: HTMLCollectionOf<HTMLElement> = this.imageContainer.getElementsByTagName("img");
             try {
-                img = imgEvent as HTMLImageElement;
+                newImageElement = imgEvent as HTMLImageElement;
             } catch (error) {
                 console.warn(error);
                 return;
             }
-            console.log(img.src);
-            document.body.style.overflow = "hidden";
+            console.log(oldImageElements.length);
+            
+            if (oldImageElements.length > 0) {
+                for (let i: number = 0; i < oldImageElements.length; i++) {
+                    console.info("Removing from Modal:" + oldImageElements[i]);
+                    oldImageElements[i].remove();
+                }
+            }
+            console.log(newImageElement.src);
             //Check if image exists!
             let fullImg: HTMLImageElement = document.createElement("img");
-            fullImg.src = img.src;
-            fullImg.alt = img.alt;
-            fullImg.loading ="lazy";
+            fullImg.src = newImageElement.src;
+            fullImg.alt = newImageElement.alt;
+            fullImg.loading = "lazy";
             this.imageContainer.append(fullImg);
             this.imageDialog.showModal();
         }

@@ -23,20 +23,27 @@ var codersPlace;
         }
         showDialog(event) {
             let imgEvent = event.target;
-            let img;
+            let newImageElement;
+            let oldImageElements = this.imageContainer.getElementsByTagName("img");
             try {
-                img = imgEvent;
+                newImageElement = imgEvent;
             }
             catch (error) {
                 console.warn(error);
                 return;
             }
-            console.log(img.src);
-            document.body.style.overflow = "hidden";
+            console.log(oldImageElements.length);
+            if (oldImageElements.length > 0) {
+                for (let i = 0; i < oldImageElements.length; i++) {
+                    console.info("Removing from Modal:" + oldImageElements[i]);
+                    oldImageElements[i].remove();
+                }
+            }
+            console.log(newImageElement.src);
             //Check if image exists!
             let fullImg = document.createElement("img");
-            fullImg.src = img.src;
-            fullImg.alt = img.alt;
+            fullImg.src = newImageElement.src;
+            fullImg.alt = newImageElement.alt;
             fullImg.loading = "lazy";
             this.imageContainer.append(fullImg);
             this.imageDialog.showModal();

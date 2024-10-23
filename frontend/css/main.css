@@ -148,6 +148,10 @@ blockquote>div {
     outline: none;
 }
 
+body:has(#image_dialog[open]) {
+    overflow: hidden;
+}
+
 .full_screen_image_container {
     background-color: var(--secondary-background);
     border-radius: var(--card-border);
@@ -157,9 +161,11 @@ blockquote>div {
     padding-bottom: 15px;
     padding-top: 15px;
 }
-.full_screen_image_container>img{
+
+.full_screen_image_container>img {
     border-radius: var(--card-border);
-    max-height: calc(100vh - 65px ); /* 16 * 2 + 15 * 2 */
+    max-height: calc(100vh - 65px);
+    /* 16 * 2 + 15 * 2 */
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
