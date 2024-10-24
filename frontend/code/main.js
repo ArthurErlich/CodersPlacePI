@@ -1,3 +1,3 @@
 import { FullScreenImage } from "./FullScreenImage.js";
-//ONPageLoadEnd:
+//OnPageLoadEnd:
 let fullScreenImage = new FullScreenImage();

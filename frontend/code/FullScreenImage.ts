@@ -8,7 +8,7 @@ export class FullScreenImage {
     public constructor() {
         this.imageList = document.getElementsByTagName("img");
         this.imageDialog = document.getElementById("image_dialog") as HTMLDialogElement;
-        this.imageContainer = this.imageDialog.getElementsByClassName("full_screen_image_container")[0] as HTMLElement;
+        this.imageContainer = this.imageDialog.getElementsByClassName("full_screen_image_card")[0] as HTMLElement;
         this.addFullScreenImageModal();
     }
     private addFullScreenImageModal(): void {
