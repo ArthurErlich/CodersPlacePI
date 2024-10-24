@@ -152,6 +152,8 @@ body:has(#image_dialog[open]) {
     overflow: hidden;
 }
 
+/*
+TODO:Needs redesing! 
 .full_screen_image_card {
     background-color: var(--secondary-background);
     border-radius: var(--card-border);
@@ -165,7 +167,7 @@ body:has(#image_dialog[open]) {
 .full_screen_image_card>img {
     border-radius: var(--card-border);
     max-height: calc(100vh - 65px);
-    /* 16 * 2 + 15 * 2 */
+    // 16 * 2 + 15 * 2 
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -184,7 +186,7 @@ body:has(#image_dialog[open]) {
 #image_dialog_container {
     margin-left: auto;
     margin-right: auto;
-}
+} */
 
 #blog_card_container {
     display: flex;
