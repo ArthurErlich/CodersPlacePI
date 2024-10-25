@@ -47,6 +47,7 @@ img {
 html {
     min-height: 100vh;
     scroll-behavior: smooth;
+    scrollbar-gutter: stable both-edges;
 }
 
 body {
@@ -137,6 +138,62 @@ blockquote {
 blockquote>div {
     border-left: 3px solid var(--standard-text-color);
     padding-left: 5px;
+}
+
+#image_dialog[open] {
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    max-width: none;
+    max-height: none;
+}
+
+body:has(#image_dialog[open]) {
+    overflow: hidden;
+}
+
+#image_dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+}
+.image_dialog_close_wrap{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+#image_dialog_close_btn {
+    color: white;
+    text-align: right;
+    margin: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#image_dialog_container {
+    background-color: var(--secondary-background);
+    border-radius: var(--card-border);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.full_screen_image_card>img {
+    border-radius: var(--card-border);
+    max-height: calc(100vh - 65px);
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.full_screen_image_card {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
 }
 
 #blog_card_container {

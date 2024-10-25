@@ -1,6 +1,6 @@
 namespace codersPlace {
-    class NaviElement extends HTMLElement{
-        constructor(){
+    class NaviElement extends HTMLElement {
+        constructor() {
             super();
         }
         connectedCallback() {
@@ -14,8 +14,8 @@ namespace codersPlace {
             `;
         }
     }
-    class FooterElement extends HTMLElement{
-        constructor(){
+    class FooterElement extends HTMLElement {
+        constructor() {
             super();
         }
         connectedCallback() {
@@ -26,7 +26,28 @@ namespace codersPlace {
             `;
         }
     }
+    class DialogElement extends HTMLElement {
+        constructor() {
+            super();
+        }
+        connectedCallback() {
+            this.innerHTML = `
+            <dialog id="image_dialog">
+                <div id="image_dialog_container">
+                    <div class="image_dialog_close_wrap">
+                        <div id="image_dialog_close_btn">
+                            X
+                        </div>
+                    </div>
+                    <div class="full_screen_image_card">
+                        <!-- JS Image PlaceHolder -->
+                    </div>
+                </div>
+            </dialog>
+            `
+        }
+    }
     customElements.define("custom-footer", FooterElement);
-    customElements.define("custom-header",NaviElement);
+    customElements.define("custom-header", NaviElement);
+    customElements.define("custom-img-dialog", DialogElement)
 }
-
