@@ -34,10 +34,8 @@ export class FullScreenImage {
             console.warn(error);
             return;
         }
-        console.log(oldImageElements.length);
         if (oldImageElements.length > 0) {
             for (let i = 0; i < oldImageElements.length; i++) {
-                console.info("Removing from Modal:" + oldImageElements[i]);
                 oldImageElements[i].remove();
             }
         }
