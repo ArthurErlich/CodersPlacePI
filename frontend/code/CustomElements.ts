@@ -34,8 +34,10 @@ namespace codersPlace {
             this.innerHTML = `
             <dialog id="image_dialog">
                 <div id="image_dialog_container">
-                    <div id="image_dialog_close_btn">
-                        X
+                    <div class="image_dialog_close_wrap">
+                        <div id="image_dialog_close_btn">
+                            X
+                        </div>
                     </div>
                     <div class="full_screen_image_card">
                         <!-- JS Image PlaceHolder -->

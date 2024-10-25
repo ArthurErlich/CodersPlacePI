@@ -3,12 +3,14 @@ export class FullScreenImage {
     private imageList: HTMLCollectionOf<HTMLImageElement>;
     private imageDialog: HTMLDialogElement;
     private imageContainer: HTMLElement;
+    private closeBtn:HTMLElement;
 
 
     public constructor() {
         this.imageList = document.getElementsByTagName("img");
         this.imageDialog = document.getElementById("image_dialog") as HTMLDialogElement;
         this.imageContainer = this.imageDialog.getElementsByClassName("full_screen_image_card")[0] as HTMLElement;
+        this.closeBtn = document.getElementById("image_dialog_close_btn");
         this.addFullScreenImageModal();
     }
     private addFullScreenImageModal(): void {
@@ -17,7 +19,10 @@ export class FullScreenImage {
             console.warn("not found on this page, skipping");
             return;
         }
-        //add on click functionality
+        //adds an event to close the image if the backdrop or the close button is clicked
+        //TODO:add Backdrop
+        this.closeBtn.addEventListener("click", () => this.closeDialog());
+        //add on click functionality, only if an image exist on the page
         if (this.imageList.length == 0) {
             return;
         }
@@ -51,5 +56,8 @@ export class FullScreenImage {
         fullImg.loading = "lazy";
         this.imageContainer.append(fullImg);
         this.imageDialog.showModal();
+    }
+    public closeDialog():void{
+        this.imageDialog.close();
     }
 }

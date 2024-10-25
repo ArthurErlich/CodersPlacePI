@@ -169,6 +169,8 @@ body:has(#image_dialog[open]) {
     color: white;
     text-align: right;
     margin: 5px;
+    cursor: pointer;
+    user-select: none;
 }
 
 #image_dialog_container {
