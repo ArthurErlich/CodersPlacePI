@@ -34,7 +34,7 @@ namespace codersPlace {
             this.innerHTML = `
             <dialog id="image_dialog">
                 <div id="image_dialog_container">
-                    <div class="image_dialog_close_wrap">
+                    <div class="image_dialog_header">
                         <div id="image_dialog_close_btn">
                             X
                         </div>
