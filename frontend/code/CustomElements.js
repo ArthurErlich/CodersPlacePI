@@ -6,7 +6,7 @@ var codersPlace;
         }
         connectedCallback() {
             this.innerHTML = `
-            <nav>
+            <nav class="no_print">
                 <a href="/frontend/html/index.html"><div>Home</div></a>
                 <a href="/frontend/html/blog/blog_index.html"><div>Blog</div></a>
                 <a href="/frontend/html/cv.html"><div>CV</div></a>
@@ -21,9 +21,11 @@ var codersPlace;
         }
         connectedCallback() {
             this.innerHTML = `
+            <div class="no_print">
             <div><a href="https://github.com/ArthurErlich">GitHub</a></div>
             <div><a href="/frontend/html/salary_transparency.html">Salary Transparency</a></div>
             <div><a href="/frontend/html/changelog.html">Changelog</a></div>
+            </div>
             `;
         }
     }
