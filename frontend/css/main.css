@@ -41,6 +41,28 @@ Future Light Color Schema
     }
 }
 
+@media print {
+    .no_print {
+        visibility: hidden;
+    }
+
+    footer {
+        visibility: hidden;
+    }
+
+    html,
+    body,
+    a {
+        color: black !important;
+    }
+
+    p,
+    div,
+    ul {
+        break-inside: avoid;
+    }
+}
+
 img {
     max-width: 100%;
 }
@@ -50,7 +72,8 @@ html {
     scroll-behavior: smooth;
     scrollbar-gutter: stable both-edges;
 }
-html:has(custom-img-dialog){
+
+html:has(custom-img-dialog) {
     scrollbar-gutter: auto;
 }
 
@@ -167,7 +190,8 @@ body:has(#image_dialog[open]) {
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(2px);
 }
-.image_dialog_header{
+
+.image_dialog_header {
     background-color: var(--trinary-background);
     display: flex;
     justify-content: flex-end;
@@ -178,6 +202,7 @@ body:has(#image_dialog[open]) {
     border-top-right-radius: var(--card-border);
     border-top-left-radius: var(--card-border);
 }
+
 #image_dialog_close_btn {
     color: white;
     background-color: var(--main-background);
@@ -191,16 +216,14 @@ body:has(#image_dialog[open]) {
     border-radius: var(--card-border);
     margin-right: 5px;
 }
-#image_dialog_close_btn:hover{
 
-
-}
+#image_dialog_close_btn:hover {}
 
 #image_dialog_container {
     background-color: var(--secondary-background);
     border-radius: var(--card-border);
     margin-left: 20px;
-    margin-right:20px;
+    margin-right: 20px;
 }
 
 .full_screen_image_card>img {
