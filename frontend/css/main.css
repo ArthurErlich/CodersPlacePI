@@ -42,12 +42,14 @@ Future Light Color Schema
 }
 
 @media print {
-    .no_print {
+
+    .no_print,
+    footer {
         visibility: hidden;
     }
 
-    footer {
-        visibility: hidden;
+    code {
+        color: black !important ! background-color: white !important;
     }
 
     html,
