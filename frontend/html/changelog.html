@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Changelog</title>
-    <link rel="icon" href="/frontend/images/AE_Gezeichnet.png" type="image/x-icon">
+    <link rel="icon" href="/frontend/images/AE_Gezeichnet_Favicon.jpg" type="image/x-icon">
     <!--css preload-->
     <link rel="preload" href="/frontend/fonts/FiraCode-Medium.ttf" type="font/ttf" as="font" crossorigin>
     <link rel="preload" href="/frontend/css/main.css" as="style">
     <link rel="stylesheet" href="/frontend/css/main.css">
-    <script src="/frontend/code/main.js" type="module" defer></script>
-    <script src="/frontend/code/CustomElements.js"></script>
+    <script src="/frontend/code/dist/main.js" type="module" defer></script>
+    <script src="/frontend/code/dist/CustomElements.js"></script>
 </head>
 
 <body>
@@ -21,6 +21,17 @@
     <main id="changlog">
         <h1>Changelog</h1>
         <div id="changlog_container">
+            <div class="changelog_card">
+                <h2><time datetime="2024-11-21">21.11.2024</time></h2>
+                <hr>
+                <ul>
+                    <li>Chore release</li>
+                    <li>Refactored TS structure</li>
+                    <li>Moved blog css out of main</li>
+                    <li>Removed experimental gutter</li>
+                    <li>Changed Favicon to use smaller file</li>
+                </ul>
+            </div>
             <div class="changelog_card">
                 <h2><time datetime="2024-10-31">31.10.2024</time></h2>
                 <hr>
