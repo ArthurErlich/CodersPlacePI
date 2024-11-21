@@ -1,4 +1,3 @@
-
 class NaviElement extends HTMLElement {
     constructor() {
         super();
@@ -44,9 +43,9 @@ class DialogElement extends HTMLElement {
                     </div>
                 </div>
             </dialog>
-            `
+            `;
     }
 }
 customElements.define("custom-footer", FooterElement);
 customElements.define("custom-header", NaviElement);
-customElements.define("custom-img-dialog", DialogElement)
+customElements.define("custom-img-dialog", DialogElement);
