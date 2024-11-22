@@ -10,6 +10,7 @@
     --hover-shadow: 3px 3px 5px 0px #00000080;
 
     --code-background:#2c2c2c;
+    --code-font-size:0.9rem;
 
     --main-width: 900px;
 
@@ -367,4 +368,5 @@ pre:has(code){
     border-radius: var(--card-border);
     padding: 15px;
     max-width: max-content;
+    font-size: var(--code-font-size);
 }
