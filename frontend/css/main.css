@@ -365,5 +365,6 @@ pre > code{
 pre:has(code){
     background-color: var(--code-background);
     border-radius: var(--card-border);
-    padding: 0px;
+    padding: 15px;
+    max-width: max-content;
 }
