@@ -38,7 +38,7 @@
         <p>
             Yes, my first step was to think what I actually want. I did some rough drafts on paper.
             I won't show you my horrible mess of drafts I did there.
-            It is really important to write down, better to make a moccup of your idea.
+            It is really important to write down, better to make a mockup of your idea.
             My idea was simple at first. Then I realized, what will be my trigger?
             A new tab or inside the same HTML document? Where should I put the code?
             As you see, it is one thing to have an idea, but a quite difficult thing is to make it happen.
@@ -56,32 +56,32 @@
             was a good read to learn how to create a modal without the <code>dialog</code> HTML Element.
         </p>
         <p>
-            With all the information gathered and a plan formulated, my part on start implementing the idae started.
+            With all the information gathered and a plan formulated, my part on start implementing the Idea started.
         </p>
         <h2>Implementation</h2>
         <p>
         <pre><code> 
-let imageList = document.getElementsByTagName("img");
-console.log(imageList);
-addFullScreenImageModal();
-function addFullScreenImageModal() {
-    if (imageList.length == 0) {
-        return;
-    }
-    for (let i = 0; i < imageList.length; i++) {
-        imageList.item(i).addEventListener("click", function (event) {
-            let imgEvent = event.target;
-            let img;
-            try {
-                img = imgEvent;
-                console.log(img.src);
+            let imageList = document.getElementsByTagName("img");
+            console.log(imageList);
+            addFullScreenImageModal();
+            function addFullScreenImageModal() {
+                if (imageList.length == 0) {
+                    return;
+                }
+                for (let i = 0; i < imageList.length; i++) {
+                    imageList.item(i).addEventListener("click", function (event) {
+                        let imgEvent = event.target;
+                        let img;
+                        try {
+                            img = imgEvent;
+                            console.log(img.src);
+                        }
+                        catch (error) {
+                            return;
+                        }
+                    });
+                }
             }
-            catch (error) {
-                return;
-            }
-        });
-    }
-}
             </code></pre>
         </p>
         <p>
@@ -121,7 +121,31 @@ function addFullScreenImageModal() {
         TODO:ADD IMAGE HERE
         <h3>Adding the close button</h3>
         <p>
-            This was very simple
+            This was very simple, when selecting and using the Dialog inside a variable, you can simple "open" and
+            "close" the dialog.
+        <pre><code>
+public closeDialog():void{
+    this.imageDialog.close();
+}
+        </code></pre>
+        As you can see, it is simple to close the Dialog.
+        </p>
+        <h2>Replacing Image in the Dialog</h2>
+        <p>
+            When the user clicks the images. An event is triggered. In the event I can get the event-source. Here I can find out what the src attribute in the image tag is.
+            And for safety the function returns out if the image dialog is empty. This happens if I don't want to add the full screen image custom-tag.
+            There wont even be a event listener on the image.
+            When no Images are found the function also returns out.
+            <code><pre>
+this.imageList = document.getElementsByTagName("img");
+if (this.imageDialog == null || this.imageContainer == null) {
+    console.warn("not found on this page, skipping");
+    return;
+}
+if (this.imageList.length == 0) {
+    return;
+}
+            </pre></code>
         </p>
     </main>
     <footer>
