@@ -61,39 +61,62 @@
         <h2>Implementation</h2>
         <p>
         <pre><code> 
-                let imageList = document.getElementsByTagName("img");
-                console.log(imageList);
-                addFullScreenImageModal();
-                function addFullScreenImageModal() {
-                    if (imageList.length == 0) {
-                        return;
-                    }
-                    for (let i = 0; i < imageList.length; i++) {
-                        imageList.item(i).addEventListener("click", function (event) {
-                            let imgEvent = event.target;
-                            let img;
-                            try {
-                                img = imgEvent;
-                                console.log(img.src);
-                            }
-                            catch (error) {
-                                return;
-                            }
-                        });
-                    }
-                }</code></pre>
+let imageList = document.getElementsByTagName("img");
+console.log(imageList);
+addFullScreenImageModal();
+function addFullScreenImageModal() {
+    if (imageList.length == 0) {
+        return;
+    }
+    for (let i = 0; i < imageList.length; i++) {
+        imageList.item(i).addEventListener("click", function (event) {
+            let imgEvent = event.target;
+            let img;
+            try {
+                img = imgEvent;
+                console.log(img.src);
+            }
+            catch (error) {
+                return;
+            }
+        });
+    }
+}
+            </code></pre>
         </p>
         <p>
-            My first implementation was to try out how the dialog will look. For this I created a simple code which allows my browser to open up the dialog box on every page reload.
+            My first implementation was to try out how the dialog will look. For this I created a simple code which
+            allows my browser to open up the dialog box on every page reload.
             This helps me to change the Look and fell of the dialog box.
         </p>
         TODO:INSERT IMAGE HERE!
         <p>
-            Styling was not that easy. It took me quite while... More then two days! The dialog Box was styled quickly. 
-            But it had an "stupid" boarder wich was not going away. 
+            Styling was not that easy. It took me quite while... More then two days! The dialog Box was styled quickly.
+            But it had an "stupid" boarder wich was not going away.
             With a lot of try and error I finally found out tha the border was not a border!
-            It was a a <code>outline</code> 
-            TODO:Finish writing
+            It was a <code>outline</code>. This Outline gave the Dialog a Border which was not going away if you just
+            disabled the <code>Border</code>
+        </p>
+        <p>
+            In the end, my CSS looked something like that:
+        <pre><code>
+#image_dialog[open] {
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    max-width: none;
+    max-height: none;
+    min-width: 200px;
+    min-height: 200px;
+}
+            </code></pre>
+        Did you spot the <code>open</code> attribute in the css selector? I used <code>Display: flex;</code> at first.
+        This meant that the Dialog was visible, even if it was not open.
+        This is why the CSS settings will only apply to the ID if the Dialog is open.
         </p>
 
     </main>
