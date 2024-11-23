@@ -1,11 +1,9 @@
-var codersPlace;
-(function (codersPlace) {
-    class NaviElement extends HTMLElement {
-        constructor() {
-            super();
-        }
-        connectedCallback() {
-            this.innerHTML = `
+class NaviElement extends HTMLElement {
+    constructor() {
+        super();
+    }
+    connectedCallback() {
+        this.innerHTML = `
             <nav class="no_print">
                 <a href="/frontend/html/index.html"><div>Home</div></a>
                 <a href="/frontend/html/blog/blog_index.html"><div>Blog</div></a>
@@ -13,26 +11,26 @@ var codersPlace;
                 <a href="/frontend/html/about_me.html"><div>About-Me</div></a>
             </nav>
             `;
-        }
     }
-    class FooterElement extends HTMLElement {
-        constructor() {
-            super();
-        }
-        connectedCallback() {
-            this.innerHTML = `     
+}
+class FooterElement extends HTMLElement {
+    constructor() {
+        super();
+    }
+    connectedCallback() {
+        this.innerHTML = `     
             <div><a href="https://github.com/ArthurErlich">GitHub</a></div>
             <div><a href="/frontend/html/salary_transparency.html">Salary Transparency</a></div>
             <div><a href="/frontend/html/changelog.html">Changelog</a></div>
             `;
-        }
     }
-    class DialogElement extends HTMLElement {
-        constructor() {
-            super();
-        }
-        connectedCallback() {
-            this.innerHTML = `
+}
+class DialogElement extends HTMLElement {
+    constructor() {
+        super();
+    }
+    connectedCallback() {
+        this.innerHTML = `
             <dialog id="image_dialog">
                 <div id="image_dialog_container">
                     <div class="image_dialog_header">
@@ -46,9 +44,8 @@ var codersPlace;
                 </div>
             </dialog>
             `;
-        }
     }
-    customElements.define("custom-footer", FooterElement);
-    customElements.define("custom-header", NaviElement);
-    customElements.define("custom-img-dialog", DialogElement);
-})(codersPlace || (codersPlace = {}));
+}
+customElements.define("custom-footer", FooterElement);
+customElements.define("custom-header", NaviElement);
+customElements.define("custom-img-dialog", DialogElement);
