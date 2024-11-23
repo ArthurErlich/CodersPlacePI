@@ -34,6 +34,23 @@
             Yes it would be faster to just use a framework like Bootstrap or a JS library for that. But where is the fun
             and the learning?
         </p>
+        <!-- <h2>Table of Content</h2>
+        <p id="index">
+        <ul>
+            <a href="#">
+                <li>Preparation</li>
+            </a>
+            <a href="#">
+                <li>Implementation</li>
+            </a>
+            <a href="#">
+                <li>Replacing Image in the Dialog</li>
+            </a>
+            <a href="#">
+                <li>Finish</li>
+            </a>
+        </ul>
+        </p> -->
         <h2>Preparation</h2>
         <p>
             Yes, my first step was to think what I actually want. I did some rough drafts on paper.
@@ -61,27 +78,27 @@
         <h2>Implementation</h2>
         <p>
         <pre><code> 
-            let imageList = document.getElementsByTagName("img");
-            console.log(imageList);
-            addFullScreenImageModal();
-            function addFullScreenImageModal() {
-                if (imageList.length == 0) {
-                    return;
-                }
-                for (let i = 0; i < imageList.length; i++) {
-                    imageList.item(i).addEventListener("click", function (event) {
-                        let imgEvent = event.target;
-                        let img;
-                        try {
-                            img = imgEvent;
-                            console.log(img.src);
-                        }
-                        catch (error) {
-                            return;
-                        }
-                    });
-                }
+let imageList = document.getElementsByTagName("img");
+console.log(imageList);
+addFullScreenImageModal();
+function addFullScreenImageModal() {
+    if (imageList.length == 0) {
+        return;
+    }
+    for (let i = 0; i < imageList.length; i++) {
+        imageList.item(i).addEventListener("click", function (event) {
+            let imgEvent = event.target;
+            let img;
+            try {
+                img = imgEvent;
+                console.log(img.src);
             }
+            catch (error) {
+                return;
+            }
+        });
+    }
+}
             </code></pre>
         </p>
         <p>
@@ -89,7 +106,7 @@
             allows my browser to open up the dialog box on every page reload.
             This helps me to change the Look and fell of the dialog box.
         </p>
-        TODO:INSERT IMAGE HERE!
+        <!-- TODO:INSERT IMAGE HERE! -->
         <p>
             Styling was not that easy. It took me quite while... More then two days! The dialog Box was styled quickly.
             But it had an "stupid" boarder wich was not going away.
@@ -118,7 +135,7 @@
         This meant that the Dialog was visible, even if it was not open.
         This is why the CSS settings will only apply to the ID if the Dialog is open.
         </p>
-        TODO:ADD IMAGE HERE
+        <!-- TODO:ADD IMAGE HERE -->
         <h3>Adding the close button</h3>
         <p>
             This was very simple, when selecting and using the Dialog inside a variable, you can simple "open" and
@@ -135,8 +152,8 @@ public closeDialog():void{
             When the user clicks the images. An event is triggered. In the event I can get the event-source. Here I can find out what the src attribute in the image tag is.
             And for safety the function returns out if the image dialog is empty. This happens if I don't want to add the full screen image custom-tag.
             There wont even be a event listener on the image.
-            When no Images are found the function also returns out.
-            <code><pre>
+            When no Images are found the function also returns out, saves some compute time and makes the code safe to use, even if some parts are missing.
+            <pre><code>
 this.imageList = document.getElementsByTagName("img");
 if (this.imageDialog == null || this.imageContainer == null) {
     console.warn("not found on this page, skipping");
@@ -145,7 +162,11 @@ if (this.imageDialog == null || this.imageContainer == null) {
 if (this.imageList.length == 0) {
     return;
 }
-            </pre></code>
+            </code></pre>
+        </p>
+        <h2>Finish</h2>
+        <p>
+            Use this image, clock on it. You will be greeted with an full screen version of that image.
         </p>
     </main>
     <footer>
