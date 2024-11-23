@@ -9,6 +9,9 @@
     --default-shadow: 2px 2px 5px 0px #00000080;
     --hover-shadow: 3px 3px 5px 0px #00000080;
 
+    --code-background:#2c2c2c;
+    --code-font-size:0.9rem;
+
     --main-width: 900px;
 
     --card-border: 5px;
@@ -352,7 +355,18 @@ body:has(#image_dialog[open]) {
 }
 
 code {
-    background-color: #0a0a0a;
+    background-color: var(--code-background);
     border-radius: 2px;
-    padding: 5px;
+    padding: 2px 5px 2px 5px;
+}
+pre > code{
+    background-color: transparent;
+
+}
+pre:has(code){
+    background-color: var(--code-background);
+    border-radius: var(--card-border);
+    padding: 15px;
+    max-width: max-content;
+    font-size: var(--code-font-size);
 }

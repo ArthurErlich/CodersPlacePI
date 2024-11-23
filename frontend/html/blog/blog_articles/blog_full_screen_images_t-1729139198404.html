@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Screen Images</title>
+    <link rel="icon" href="/frontend/images/AE_Gezeichnet_Favicon.jpg" type="image/x-icon">
+    <!--css preload-->
+    <link rel="preload" href="/frontend/fonts/FiraCode-Medium.ttf" type="font/ttf" as="font" crossorigin>
+    <link rel="preload" href="/frontend/css/main.css" as="style">
+    <link rel="preload" href="/frontend/css/blog.css" as="style">
+    <link rel="stylesheet" href="/frontend/css/main.css">
+    <link rel="stylesheet" href="/frontend/css/blog.css">
+    <script src="/frontend/code/dist/main.js" type="module" defer></script>
+    <script src="/frontend/code/dist/CustomElements.js"></script>
+</head>
+
+<body>
+    <header>
+        <custom-header></custom-header>
+    </header>
+    <main id="blog_post">
+        <div id="blog_header">
+            <h1>Full-Screen Images</h1>
+            <div id="blog_date">21.11.2024</div>
+            <hr>
+        </div>
+        <p>
+            It is time to show you, how I did the Full-Screen Images on my Site.
+            As some of you noticed, I added a function where you click on an image and it will open up in a full screen
+            window.
+            Firstly, I am proud of myself. I did not use any framework and came up with the idea myself.
+            Yes it would be faster to just use a framework like Bootstrap or a JS library for that. But where is the fun
+            and the learning?
+        </p>
+        <!-- <h2>Table of Content</h2>
+        <p id="index">
+        <ul>
+            <a href="#">
+                <li>Preparation</li>
+            </a>
+            <a href="#">
+                <li>Implementation</li>
+            </a>
+            <a href="#">
+                <li>Replacing Image in the Dialog</li>
+            </a>
+            <a href="#">
+                <li>Finish</li>
+            </a>
+        </ul>
+        </p> -->
+        <h2>Preparation</h2>
+        <p>
+            Yes, my first step was to think what I actually want. I did some rough drafts on paper.
+            I won't show you my horrible mess of drafts I did there.
+            It is really important to write down, better to make a mockup of your idea.
+            My idea was simple at first. Then I realized, what will be my trigger?
+            A new tab or inside the same HTML document? Where should I put the code?
+            As you see, it is one thing to have an idea, but a quite difficult thing is to make it happen.
+        </p>
+        <h3>Reading the documentation</h3>
+        <p>
+            My next step was to find out what the best practice is.
+            There are two main ways to create stuff over the top of the page.
+            The <code>dialog</code> or <code>modal</code>.
+            Reading through the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog">MDN developer
+                source</a> or a reference to learn about the modal HTML element.
+            I have learned a lot about the standard <code>dialog</code> HTML Element.
+            The <a href="https://www.w3schools.com/howto/howto_css_modals.asp">How TO - CSS/JS Modal</a> and <a
+                href="https://wiki.selfHTML.org/wiki/Infobox/modale_Dialogfenster">Infobox/modale Dialogfenster</a>
+            was a good read to learn how to create a modal without the <code>dialog</code> HTML Element.
+        </p>
+        <p>
+            With all the information gathered and a plan formulated, my part on start implementing the Idea started.
+        </p>
+        <h2>Implementation</h2>
+        <p>
+        <pre><code> 
+let imageList = document.getElementsByTagName("img");
+console.log(imageList);
+addFullScreenImageModal();
+function addFullScreenImageModal() {
+    if (imageList.length == 0) {
+        return;
+    }
+    for (let i = 0; i < imageList.length; i++) {
+        imageList.item(i).addEventListener("click", function (event) {
+            let imgEvent = event.target;
+            let img;
+            try {
+                img = imgEvent;
+                console.log(img.src);
+            }
+            catch (error) {
+                return;
+            }
+        });
+    }
+}
+            </code></pre>
+        </p>
+        <p>
+            My first implementation was to try out how the dialog will look. For this I created a simple code which
+            allows my browser to open up the dialog box on every page reload.
+            This helps me to change the Look and fell of the dialog box.
+        </p>
+        <!-- TODO:INSERT IMAGE HERE! -->
+        <p>
+            Styling was not that easy. It took me quite while... More then two days! The dialog Box was styled quickly.
+            But it had an "stupid" boarder wich was not going away.
+            With a lot of try and error I finally found out tha the border was not a border!
+            It was a <code>outline</code>. This Outline gave the Dialog a Border which was not going away if you just
+            disabled the <code>Border</code>
+        </p>
+        <p>
+            In the end, my CSS looked something like that:
+        <pre><code>
+#image_dialog[open] {
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    max-width: none;
+    max-height: none;
+    min-width: 200px;
+    min-height: 200px;
+}
+            </code></pre>
+        Did you spot the <code>open</code> attribute in the css selector? I used <code>Display: flex;</code> at first.
+        This meant that the Dialog was visible, even if it was not open.
+        This is why the CSS settings will only apply to the ID if the Dialog is open.
+        </p>
+        <!-- TODO:ADD IMAGE HERE -->
+        <h3>Adding the close button</h3>
+        <p>
+            This was very simple, when selecting and using the Dialog inside a variable, you can simple "open" and
+            "close" the dialog.
+        <pre><code>
+public closeDialog():void{
+    this.imageDialog.close();
+}
+        </code></pre>
+        As you can see, it is simple to close the Dialog.
+        </p>
+        <h2>Replacing Image in the Dialog</h2>
+        <p>
+            When the user clicks the images. An event is triggered. In the event I can get the event-source. Here I can find out what the src attribute in the image tag is.
+            And for safety the function returns out if the image dialog is empty. This happens if I don't want to add the full screen image custom-tag.
+            There wont even be a event listener on the image.
+            When no Images are found the function also returns out, saves some compute time and makes the code safe to use, even if some parts are missing.
+            <pre><code>
+this.imageList = document.getElementsByTagName("img");
+if (this.imageDialog == null || this.imageContainer == null) {
+    console.warn("not found on this page, skipping");
+    return;
+}
+if (this.imageList.length == 0) {
+    return;
+}
+            </code></pre>
+        </p>
+        <h2>Finish</h2>
+        <p>
+            Use this image, clock on it. You will be greeted with an full screen version of that image.
+        </p>
+    </main>
+    <footer>
+        <custom-footer></custom-footer>
+    </footer>
+    <custom-img-dialog></custom-img-dialog>
+</body>
+
+</HTML>
