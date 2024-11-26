@@ -7,11 +7,16 @@ export class FullScreenImage {
 
 
     public constructor() {
-        this.imageList = document.getElementsByTagName("img");
-        this.imageDialog = document.getElementById("image_dialog") as HTMLDialogElement;
-        this.imageContainer = this.imageDialog.getElementsByClassName("full_screen_image_card")[0] as HTMLElement;
-        this.closeBtn = document.getElementById("image_dialog_close_btn");
-        this.addFullScreenImageModal();
+        try {
+            this.imageList = document.getElementsByTagName("img");
+            this.imageDialog = document.getElementById("image_dialog") as HTMLDialogElement;
+            this.imageContainer = this.imageDialog.getElementsByClassName("full_screen_image_card")[0] as HTMLElement;
+            this.closeBtn = document.getElementById("image_dialog_close_btn");
+            this.addFullScreenImageModal();
+        } catch (error) {
+            console.warn("Some HTML Tags are not found: " + error);
+            return;
+        }
     }
     private addFullScreenImageModal(): void {
         //avoid adding the event on images when the dialog/modal element is missing.
@@ -46,7 +51,7 @@ export class FullScreenImage {
                 oldImageElements[i].remove();
             }
         }
-        console.log(newImageElement.src);
+        // console.log(newImageElement.src);
         //Check if image exists!
         let fullImg: HTMLImageElement = document.createElement("img");
         fullImg.src = newImageElement.src;
