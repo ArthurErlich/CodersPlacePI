@@ -152,11 +152,14 @@ custom-footer a {
 
 custom-index-links {
     display: block;
-    padding:   5px  5px 40px 5px ;
-
+    padding-top: 10px;
+    padding-bottom:40px;
+    /*
+    TODO: Find suitable design
     background-color: var(--secondary-background);
-    /* border-radius: var(--card-border);
-    box-shadow: var(--default-shadow); */
+    border-radius: var(--card-border);
+    box-shadow: var(--default-shadow); 
+    */
 }
 
 a:hover {
