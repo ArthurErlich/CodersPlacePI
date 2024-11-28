@@ -13,4 +13,6 @@ export class IndexLinkingElement extends HTMLElement {
         console.info(elementCollection);
         return elementCollection;
     }
+    setAnkerPoint(headerList) {
+    }
 }
