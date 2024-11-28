@@ -29,7 +29,7 @@ Future Light Color Schema
 
 @font-face {
     font-family: "Fira Code";
-    src: url("/frontend/fonts/FiraCode-Medium.ttf");
+    src: url("/frontend/fonts/FiraCode-Medium.woff2") format("woff2");
 }
 
 @media screen and (max-width: 900px) {
@@ -101,6 +101,10 @@ footer {
     width: 100%;
 }
 
+custom-header {
+    min-height: 50px;
+}
+
 nav {
     min-height: 50px;
     display: flex;
@@ -153,9 +157,10 @@ custom-footer a {
 custom-index-links {
     display: block;
     padding-top: 10px;
-    padding-bottom:40px;
+    padding-bottom: 40px;
 
-    min-height: 200px;;
+    min-height: 200px;
+    ;
     /*
     TODO: Find suitable design
     background-color: var(--secondary-background);
