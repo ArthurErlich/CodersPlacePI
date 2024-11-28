@@ -6,13 +6,13 @@ export class IndexLinkingElement extends HTMLElement {
     connectedCallback() {
         window.addEventListener("load", (event) => {
             console.log("Window loaded, starting with Index creation,")
-            let headerList: NodeListOf<HTMLElement> = this.getHTagList(["h1", "h2", "h3"]);
+            let headerList: NodeListOf<HTMLElement> = this.getHeaderTagList(["h1", "h2", "h3"]);
             this.setAnkerPoint(headerList);
             //TODO fll this.body with correct index, check older Blog for reference
         });
     }
 
-    private getHTagList(selection: Array<string>): NodeListOf<HTMLElement> {
+    private getHeaderTagList(selection: Array<string>): NodeListOf<HTMLElement> {
 
         let selectionString = selection.toString();
         // retrieves the elements in the correct order
@@ -25,7 +25,7 @@ export class IndexLinkingElement extends HTMLElement {
         return elementCollection;
 
     }
-    
+
     private setAnkerPoint(headerList: NodeListOf<HTMLElement>): void {
         console.log("Adding anchor points");
         headerList.forEach((header, key) => {
@@ -33,6 +33,13 @@ export class IndexLinkingElement extends HTMLElement {
             console.log(header.id);
         });
 
+    }
+
+    private createIndex(headerList: NodeListOf<HTMLElement>):void {
+        //h2 Table Of Contetn
+        //<div id="index">
+        //ul
+        //li -> a
     }
     // Find all h1 -> h2 and h3 Elements. 👍
     // Add Anker with indexnumber and name to header tag 👍
