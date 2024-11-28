@@ -9,8 +9,8 @@
     --default-shadow: 2px 2px 5px 0px #00000080;
     --hover-shadow: 3px 3px 5px 0px #00000080;
 
-    --code-background:#2c2c2c;
-    --code-font-size:0.9rem;
+    --code-background: #2c2c2c;
+    --code-font-size: 0.9rem;
 
     --main-width: 900px;
 
@@ -29,7 +29,7 @@ Future Light Color Schema
 
 @font-face {
     font-family: "Fira Code";
-    src: url("/frontend/fonts/FiraCode-Medium.ttf");
+    src: url("/frontend/fonts/FiraCode-Medium.woff2") format("woff2");
 }
 
 @media screen and (max-width: 900px) {
@@ -101,6 +101,10 @@ footer {
     width: 100%;
 }
 
+custom-header {
+    min-height: 50px;
+}
+
 nav {
     min-height: 50px;
     display: flex;
@@ -148,6 +152,21 @@ custom-footer>div {
 
 custom-footer a {
     text-decoration: none;
+}
+
+custom-index-links {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 40px;
+
+    min-height: 200px;
+    ;
+    /*
+    TODO: Find suitable design
+    background-color: var(--secondary-background);
+    border-radius: var(--card-border);
+    box-shadow: var(--default-shadow); 
+    */
 }
 
 a:hover {
@@ -359,11 +378,13 @@ code {
     border-radius: 2px;
     padding: 2px 5px 2px 5px;
 }
-pre > code{
+
+pre>code {
     background-color: transparent;
 
 }
-pre:has(code){
+
+pre:has(code) {
     background-color: var(--code-background);
     border-radius: var(--card-border);
     padding: 15px;

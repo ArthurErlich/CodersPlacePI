@@ -1,2 +1,4 @@
 import { FullScreenImage } from "./modules/FullScreenImage.js";
-let fullScreenImage = new FullScreenImage();
+window.onload = function () {
+    new FullScreenImage();
+};

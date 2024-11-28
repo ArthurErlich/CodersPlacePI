@@ -7,19 +7,24 @@
     <title>Full-Screen Images</title>
     <link rel="icon" href="/frontend/images/AE_Gezeichnet_Favicon.jpg" type="image/x-icon">
     <!--css preload-->
-    <link rel="preload" href="/frontend/fonts/FiraCode-Medium.ttf" type="font/ttf" as="font" crossorigin>
+    <link rel=”prefetch” href="/frontend/fonts/FiraCode-Medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="/frontend/css/main.css" as="style">
     <link rel="preload" href="/frontend/css/blog.css" as="style">
+
+    <!-- js preload -->
+    <link rel="preload" href="/frontend/code/dist/CustomElements.js" as="script" crossorigin="anonymous">
+
     <link rel="stylesheet" href="/frontend/css/main.css">
     <link rel="stylesheet" href="/frontend/css/blog.css">
     <script src="/frontend/code/dist/main.js" type="module" defer></script>
-    <script src="/frontend/code/dist/CustomElements.js"></script>
+    <script src="/frontend/code/dist/CustomElements.js" type="module"></script>
 </head>
 
 <body>
     <header>
         <custom-header></custom-header>
     </header>
+    
     <main id="blog_post">
         <div id="blog_header">
             <h1>Full-Screen Images</h1>
@@ -34,23 +39,7 @@
             Yes it would be faster to just use a framework like Bootstrap or a JS library for that. But where is the fun
             and the learning?
         </p>
-        <!-- <h2>Table of Content</h2>
-        <p id="index">
-        <ul>
-            <a href="#">
-                <li>Preparation</li>
-            </a>
-            <a href="#">
-                <li>Implementation</li>
-            </a>
-            <a href="#">
-                <li>Replacing Image in the Dialog</li>
-            </a>
-            <a href="#">
-                <li>Finish</li>
-            </a>
-        </ul>
-        </p> -->
+        <custom-index-links></custom-index-links>
         <h2>Preparation</h2>
         <p>
             Yes, my first step was to think what I actually want. I did some rough drafts on paper.

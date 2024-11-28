@@ -1,10 +1,16 @@
 export class FullScreenImage {
     constructor() {
-        this.imageList = document.getElementsByTagName("img");
-        this.imageDialog = document.getElementById("image_dialog");
-        this.imageContainer = this.imageDialog.getElementsByClassName("full_screen_image_card")[0];
-        this.closeBtn = document.getElementById("image_dialog_close_btn");
-        this.addFullScreenImageModal();
+        try {
+            this.imageList = document.getElementsByTagName("img");
+            this.imageDialog = document.getElementById("image_dialog");
+            this.imageContainer = this.imageDialog.getElementsByClassName("full_screen_image_card")[0];
+            this.closeBtn = document.getElementById("image_dialog_close_btn");
+            this.addFullScreenImageModal();
+        }
+        catch (error) {
+            console.warn("Some HTML Tags are not found: " + error);
+            return;
+        }
     }
     addFullScreenImageModal() {
         if (this.imageDialog == null || this.imageContainer == null) {
@@ -35,7 +41,6 @@ export class FullScreenImage {
                 oldImageElements[i].remove();
             }
         }
-        console.log(newImageElement.src);
         let fullImg = document.createElement("img");
         fullImg.src = newImageElement.src;
         fullImg.alt = newImageElement.alt;
