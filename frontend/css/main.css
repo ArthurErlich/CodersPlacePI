@@ -154,6 +154,8 @@ custom-index-links {
     display: block;
     padding-top: 10px;
     padding-bottom:40px;
+
+    min-height: 200px;;
     /*
     TODO: Find suitable design
     background-color: var(--secondary-background);
