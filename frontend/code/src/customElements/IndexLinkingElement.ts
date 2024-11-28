@@ -36,10 +36,6 @@ export class IndexLinkingElement extends HTMLElement {
     }
 
     private createIndex(headerList: NodeListOf<HTMLElement>): void {
-        //h2 Table Of Contetn
-        //<div id="index">
-        //ul
-        //li -> a
         // console.log("Creating Table Of Content HTML Part");
 
         let h2Element: HTMLElement = document.createElement("h2");
