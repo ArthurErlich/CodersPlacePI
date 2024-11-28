@@ -9,8 +9,8 @@
     --default-shadow: 2px 2px 5px 0px #00000080;
     --hover-shadow: 3px 3px 5px 0px #00000080;
 
-    --code-background:#2c2c2c;
-    --code-font-size:0.9rem;
+    --code-background: #2c2c2c;
+    --code-font-size: 0.9rem;
 
     --main-width: 900px;
 
@@ -148,6 +148,15 @@ custom-footer>div {
 
 custom-footer a {
     text-decoration: none;
+}
+
+custom-index-links {
+    display: block;
+    padding:   5px  5px 40px 5px ;
+
+    background-color: var(--secondary-background);
+    /* border-radius: var(--card-border);
+    box-shadow: var(--default-shadow); */
 }
 
 a:hover {
@@ -359,11 +368,13 @@ code {
     border-radius: 2px;
     padding: 2px 5px 2px 5px;
 }
-pre > code{
+
+pre>code {
     background-color: transparent;
 
 }
-pre:has(code){
+
+pre:has(code) {
     background-color: var(--code-background);
     border-radius: var(--card-border);
     padding: 15px;
