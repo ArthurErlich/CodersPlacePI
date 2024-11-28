@@ -20,7 +20,6 @@ export class IndexLinkingElement extends HTMLElement {
         console.log("Adding anchor points");
         headerList.forEach((header, key) => {
             header.id = header.innerText.trim().replace(" ", "-") + "-" + key;
-            console.log(header.id);
         });
     }
     createIndex(headerList) {

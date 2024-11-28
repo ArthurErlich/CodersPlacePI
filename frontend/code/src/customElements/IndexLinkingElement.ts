@@ -35,12 +35,10 @@ export class IndexLinkingElement extends HTMLElement {
         console.log("Adding anchor points");
         headerList.forEach((header, key) => {
             header.id = header.innerText.trim().replace(" ", "-") + "-" + key;
-            console.log(header.id);
         });
-
     }
 
-    private createIndex(headerList: NodeListOf<HTMLElement>):void {
+    private createIndex(headerList: NodeListOf<HTMLElement>): void {
         //h2 Table Of Contetn
         //<div id="index">
         //ul
