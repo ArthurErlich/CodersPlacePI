@@ -6,7 +6,7 @@ export class IndexLinkingElement extends HTMLElement {
     }
 
     connectedCallback() {
-        window.addEventListener("load", (event) => {
+        window.addEventListener("pageshow", (event) => {
             // console.log("Window loaded, starting with Index creation,")
             let headerList: NodeListOf<HTMLElement> = this.getHeaderTagList(["h1", "h2", "h3"]);
             this.setAnkerPoint(headerList);

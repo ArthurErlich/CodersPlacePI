@@ -28,8 +28,16 @@ Future Light Color Schema
 */
 
 @font-face {
+    font-family: "Courier New Bolder";
+    src: local("Courier New");
+    font-weight: bolder !important;
+}
+
+@font-face {
     font-family: "Fira Code";
     src: url("/frontend/fonts/FiraCode-Medium.woff2") format("woff2");
+    src: url("/frontend/fonts/FiraCode-Medium.ttf") format("truetype");
+    font-weight: lighter;
 }
 
 @media screen and (max-width: 900px) {
@@ -52,7 +60,8 @@ Future Light Color Schema
     }
 
     code {
-        color: black !important ! background-color: white !important;
+        color: black !important;
+        background-color: white !important;
     }
 
     html,
@@ -86,9 +95,7 @@ body {
     background-color: var(--main-background);
     color: var(--standard-text-color);
     margin: 0;
-    font-family: "Fira Code", sans-serif;
-    font-weight: lighter;
-
+    font-family: "Fira Code","Courier New Bolder", sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
