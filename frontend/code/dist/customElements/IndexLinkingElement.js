@@ -3,7 +3,7 @@ export class IndexLinkingElement extends HTMLElement {
         super();
     }
     connectedCallback() {
-        window.addEventListener("load", (event) => {
+        window.addEventListener("pageshow", (event) => {
             let headerList = this.getHeaderTagList(["h1", "h2", "h3"]);
             this.setAnkerPoint(headerList);
             this.createIndex(headerList);
