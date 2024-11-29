@@ -1,0 +1,9 @@
+@import url("vars.css");
+body {
+    background-color: var(--main-background);
+    background-image: radial-gradient(
+        circle at center,
+        var(--gradient-background),
+        var(--main-background)  90%
+    );
+}
