@@ -1,0 +1,19 @@
+:root {
+    --standard-text-color: #d3d3d3;
+    --main-brand-color: #790000;
+    --secondary-brand-color: #256283;
+
+    --main-background: #333333;
+    --secondary-background: #3a3a3a;
+    --trinary-background: #464646;
+    --gradient-background: #34292b;
+    --default-shadow: 2px 2px 5px 0px #00000080;
+    --hover-shadow: 3px 3px 5px 0px #00000080;
+
+    --code-background: #2c2c2c;
+    --code-font-size: 0.9rem;
+
+    --main-width: 900px;
+
+    --card-border: 5px;
+}

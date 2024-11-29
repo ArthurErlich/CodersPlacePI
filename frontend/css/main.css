@@ -1,21 +1,4 @@
-:root {
-    --standard-text-color: #d3d3d3;
-    --main-brand-color: #1cff1c;
-    --secondary-brand-color: #a2ffa2;
-
-    --main-background: #333333;
-    --secondary-background: #3a3a3a;
-    --trinary-background: #464646;
-    --default-shadow: 2px 2px 5px 0px #00000080;
-    --hover-shadow: 3px 3px 5px 0px #00000080;
-
-    --code-background: #2c2c2c;
-    --code-font-size: 0.9rem;
-
-    --main-width: 900px;
-
-    --card-border: 5px;
-}
+@import url("vars.css");
 
 /*
 Future Light Color Schema
