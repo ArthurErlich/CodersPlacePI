@@ -287,26 +287,6 @@ body:has(#image_dialog[open]) {
     border-radius: var(--card-border);
 }
 
-.landingpage_hero_me_logo {
-    display: flex;
-    justify-content: center;
-}
-
-.landingpage_hero_me_logo>img {
-    border-radius: 50%;
-    width: 20%;
-}
-
-#landingpage_homefuge_spinner {
-    max-width: 150px;
-    border-radius: var(--card-border);
-}
-
-#landingpage_homefuge_game {
-    max-width: 300px;
-    border-radius: var(--card-border);
-}
-
 .github_card {
     border-radius: var(--card-border);
     box-shadow: var(--default-shadow);
@@ -377,6 +357,7 @@ pre>code {
 pre:has(code) {
     background-color: var(--code-background);
     border-radius: var(--card-border);
+    box-shadow: var(--inset-shadow);
     padding: 15px;
     max-width: max-content;
     font-size: var(--code-font-size);

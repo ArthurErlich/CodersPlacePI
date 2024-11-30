@@ -1,9 +1,42 @@
 @import url("vars.css");
+
 body {
     background-color: var(--main-background);
-    background-image: radial-gradient(
-        circle at center,
-        var(--gradient-background),
-        var(--main-background)  90%
-    );
+    background-image: linear-gradient(0deg,
+            var(--gradient-first-background),
+            var(--gradient-second-background));
+}
+
+.landingpage_hero_me_logo {
+    display: flex;
+    justify-content: center;
+}
+
+.landingpage_hero_me_logo>img {
+    border-radius: 50%;
+    height: 250px;
+}
+
+#landingpage_homefuge_spinner {
+    max-width: 150px;
+    border-radius: var(--card-border);
+}
+
+#landingpage_homefuge_game {
+    max-width: 300px;
+    border-radius: var(--card-border);
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1900px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.github_card {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--main-width);
 }
