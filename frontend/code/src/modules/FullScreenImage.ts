@@ -1,4 +1,3 @@
-
 export class FullScreenImage {
     private imageList: HTMLCollectionOf<HTMLImageElement>;
     private imageDialog: HTMLDialogElement;
