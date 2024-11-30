@@ -1,12 +1,5 @@
 @import url("vars.css");
 
-body {
-    background-color: var(--main-background);
-    background-image: linear-gradient(0deg,
-            var(--gradient-first-background),
-            var(--gradient-second-background));
-}
-
 .landingpage_hero_me_logo {
     display: flex;
     justify-content: center;

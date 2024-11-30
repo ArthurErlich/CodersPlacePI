@@ -199,6 +199,12 @@ blockquote>div {
 body:has(#image_dialog[open]) {
     overflow: hidden;
 }
+.body_gradiant{
+    background-color: var(--main-background);
+    background-image: linear-gradient(0deg,
+            var(--gradient-first-background),
+            var(--gradient-second-background));
+}
 
 #image_dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.2);
