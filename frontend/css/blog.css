@@ -1,3 +1,4 @@
+@import url("vars.css");
 #blog_card_container {
     display: flex;
     justify-content: center;

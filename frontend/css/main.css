@@ -1,21 +1,4 @@
-:root {
-    --standard-text-color: #d3d3d3;
-    --main-brand-color: #1cff1c;
-    --secondary-brand-color: #a2ffa2;
-
-    --main-background: #333333;
-    --secondary-background: #3a3a3a;
-    --trinary-background: #464646;
-    --default-shadow: 2px 2px 5px 0px #00000080;
-    --hover-shadow: 3px 3px 5px 0px #00000080;
-
-    --code-background: #2c2c2c;
-    --code-font-size: 0.9rem;
-
-    --main-width: 900px;
-
-    --card-border: 5px;
-}
+@import url("vars.css");
 
 /*
 Future Light Color Schema
@@ -216,6 +199,12 @@ blockquote>div {
 body:has(#image_dialog[open]) {
     overflow: hidden;
 }
+.body_gradiant{
+    background-color: var(--main-background);
+    background-image: linear-gradient(0deg,
+            var(--gradient-first-background),
+            var(--gradient-second-background));
+}
 
 #image_dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.2);
@@ -304,26 +293,6 @@ body:has(#image_dialog[open]) {
     border-radius: var(--card-border);
 }
 
-.landingpage_hero_me_logo {
-    display: flex;
-    justify-content: center;
-}
-
-.landingpage_hero_me_logo>img {
-    border-radius: 50%;
-    width: 20%;
-}
-
-#landingpage_homefuge_spinner {
-    max-width: 150px;
-    border-radius: var(--card-border);
-}
-
-#landingpage_homefuge_game {
-    max-width: 300px;
-    border-radius: var(--card-border);
-}
-
 .github_card {
     border-radius: var(--card-border);
     box-shadow: var(--default-shadow);
@@ -394,6 +363,7 @@ pre>code {
 pre:has(code) {
     background-color: var(--code-background);
     border-radius: var(--card-border);
+    box-shadow: var(--inset-shadow);
     padding: 15px;
     max-width: max-content;
     font-size: var(--code-font-size);
