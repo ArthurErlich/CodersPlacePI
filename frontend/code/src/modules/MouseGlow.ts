@@ -1,24 +1,16 @@
 export class MouseGlow {
-    /*
-    create DivContainer free floating
-    onMouseMove
-        get mouse pos,
-        set DivContainer to mouse pos 
-        hide Element if not visible or out of window
-        Hide when stop moving
-    */
     private mouseX: number;
     private mouseY: number;
     private size: number = 0;
     private halfSize: number = (this.size/2);
     private glowColor: string = "black";
-
     private glowDiv: HTMLElement;
+
+    // TODO:  add growing when moving and shring when stopped mofing. Depending on speed
 
     constructor() {
         this.glowDiv = this.createGlowDiv();
         document.addEventListener("mousemove", (event) => {
-            
             this.mouseX = event.x;
             this.mouseY = event.y;
 
