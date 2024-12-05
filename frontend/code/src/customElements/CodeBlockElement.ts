@@ -9,42 +9,58 @@ export class CodeBlockElement extends HTMLElement {
         this.getFormattedContent();
     }
 
-    private getFormattedContent(): string {
+    //TODO: Add return!
+    private getFormattedContent(): void {
         let text: string = this.innerHTML;
         let rawTextLines: Array<string> = text.split("\n");
-        let leadingWhiteSpace: number;
 
         //remove fist return of code block with no text
-        this.removeLineIfEmpty(rawTextLines, 0);
-
-        leadingWhiteSpace = rawTextLines[0].search(/\S|$/);
+        rawTextLines = this.removeLineIfEmpty(rawTextLines, 0);
 
         //removes the leading whitespace, coming from the element indentation in HTML code
-        for (let i = 0; i < rawTextLines.length; i++) {
-            rawTextLines[i] = rawTextLines[i].slice(leadingWhiteSpace);
-        }
+        rawTextLines = this.replaceLeadingWhitespace(rawTextLines);
 
         //remove last line if there is no text. Cleans up the last "" empty string
-        this.removeLineIfEmpty(rawTextLines, rawTextLines.length-1);
+        rawTextLines = this.removeLineIfEmpty(rawTextLines, rawTextLines.length - 1);
 
-        for (let i = 0; i < rawTextLines.length; i++) {
-            //TODO: replace whitespace with &nbsp;
-            rawTextLines[i] += "<br>";
-        }
+        //replaces leading whitespace and 
+        rawTextLines = this.preserveCodeIndentation(rawTextLines);
+
+
         text = rawTextLines.join("");
 
         //TODO:remove test
-        this.innerHTML = text;
+        // this.innerHTML = "";
+        // let test = document.createElement("div");
+        // test.innerHTML = text;
+        // this.appendChild(test);
 
-        return text;
+        this.innerHTML =text;
+
     }
 
     private removeLineIfEmpty(textLines: Array<string>, index: number): Array<string> {
-        console.log("Removing line " + textLines[index]);
         if (textLines[index] == "") {
-            textLines.splice(index,1);
+            textLines.splice(index, 1);
         }
-        
+        return textLines;
+    }
+
+    private replaceLeadingWhitespace(textLines: Array<string>): Array<string> {
+        let leadingWhiteSpace: number;
+        leadingWhiteSpace = textLines[0].search(/\S|$/);
+
+        for (let i = 0; i < textLines.length; i++) {
+            textLines[i] = textLines[i].slice(leadingWhiteSpace);
+        }
+        return textLines;
+    }
+
+    private preserveCodeIndentation(textLines: Array<string>): Array<string> {
+        for (let i = 0; i < textLines.length; i++) {
+            //TODO: replace whitespace with 
+            textLines[i] += "<br>";
+        }
         return textLines;
     }
 }
