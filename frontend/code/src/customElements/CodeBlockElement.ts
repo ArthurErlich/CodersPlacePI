@@ -26,15 +26,7 @@ export class CodeBlockElement extends HTMLElement {
         //replaces leading whitespace and 
         rawTextLines = this.preserveCodeIndentation(rawTextLines);
 
-
         text = rawTextLines.join("");
-
-        //TODO:remove test
-        // this.innerHTML = "";
-        // let test = document.createElement("div");
-        // test.innerHTML = text;
-        // this.appendChild(test);
-
         this.innerHTML =text;
 
     }
@@ -58,7 +50,6 @@ export class CodeBlockElement extends HTMLElement {
 
     private preserveCodeIndentation(textLines: Array<string>): Array<string> {
         for (let i = 0; i < textLines.length; i++) {
-            //TODO: replace whitespace with 
             textLines[i] += "<br>";
         }
         return textLines;
