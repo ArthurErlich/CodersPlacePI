@@ -10,22 +10,41 @@ export class CodeBlockElement extends HTMLElement {
     }
 
     private getFormattedContent(): string {
-        let rawText: string = this.innerHTML;
-        let rawTextLine: Array<string> = rawText.split("\n");
-        let leadingWhiteSpadeCount: number;
+        let text: string = this.innerHTML;
+        let rawTextLines: Array<string> = text.split("\n");
+        let leadingWhiteSpace: number;
 
-        if (rawTextLine[0] == "") {
-            rawTextLine.shift();
+        //remove fist return of code block with no text
+        this.removeLineIfEmpty(rawTextLines, 0);
+
+        leadingWhiteSpace = rawTextLines[0].search(/\S|$/);
+
+        //removes the leading whitespace, coming from the element indentation in HTML code
+        for (let i = 0; i < rawTextLines.length; i++) {
+            rawTextLines[i] = rawTextLines[i].slice(leadingWhiteSpace);
         }
 
-        leadingWhiteSpadeCount = rawTextLine[0].search(/\S|$/);
+        //remove last line if there is no text. Cleans up the last "" empty string
+        this.removeLineIfEmpty(rawTextLines, rawTextLines.length-1);
 
-        // TODO: Iterate over string and replace whitespace!
-        // rawTextLine.forEach(line =>{
-        //     rawTextLine[] = line.substring(leadingWhiteSpadeCount);
-        // });
-        console.log(rawTextLine);
+        for (let i = 0; i < rawTextLines.length; i++) {
+            //TODO: replace whitespace with &nbsp;
+            rawTextLines[i] += "<br>";
+        }
+        text = rawTextLines.join("");
 
-        return "";
+        //TODO:remove test
+        this.innerHTML = text;
+
+        return text;
+    }
+
+    private removeLineIfEmpty(textLines: Array<string>, index: number): Array<string> {
+        console.log("Removing line " + textLines[index]);
+        if (textLines[index] == "") {
+            textLines.splice(index,1);
+        }
+        
+        return textLines;
     }
 }

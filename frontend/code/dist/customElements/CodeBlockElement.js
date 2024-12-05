@@ -6,14 +6,27 @@ export class CodeBlockElement extends HTMLElement {
         this.getFormattedContent();
     }
     getFormattedContent() {
-        let rawText = this.innerHTML;
-        let rawTextLine = rawText.split("\n");
-        let leadingWhiteSpadeCount;
-        if (rawTextLine[0] == "") {
-            rawTextLine.shift();
+        let text = this.innerHTML;
+        let rawTextLines = text.split("\n");
+        let leadingWhiteSpace;
+        this.removeLineIfEmpty(rawTextLines, 0);
+        leadingWhiteSpace = rawTextLines[0].search(/\S|$/);
+        for (let i = 0; i < rawTextLines.length; i++) {
+            rawTextLines[i] = rawTextLines[i].slice(leadingWhiteSpace);
         }
-        leadingWhiteSpadeCount = rawTextLine[0].search(/\S|$/);
-        console.log(rawTextLine);
-        return "";
+        this.removeLineIfEmpty(rawTextLines, rawTextLines.length - 1);
+        for (let i = 0; i < rawTextLines.length; i++) {
+            rawTextLines[i] += "<br>";
+        }
+        text = rawTextLines.join("");
+        this.innerHTML = text;
+        return text;
+    }
+    removeLineIfEmpty(textLines, index) {
+        console.log("Removing line " + textLines[index]);
+        if (textLines[index] == "") {
+            textLines.splice(index, 1);
+        }
+        return textLines;
     }
 }
