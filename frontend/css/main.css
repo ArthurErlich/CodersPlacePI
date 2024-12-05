@@ -25,13 +25,13 @@ Future Light Color Schema
 
 @media screen and (max-width: 900px) {
     :root {
-        --main-width: 600px;
+        --main-width: 600px !important;
     }
 }
 
 @media screen and (max-width: 600px) {
     :root {
-        --main-width: 370px;
+        --main-width: 370px !important;
     }
 }
 
@@ -360,7 +360,9 @@ pre>code {
 
 }
 
-pre:has(code) {
+pre:has(code),
+custom-code-block {
+    font-family: monospace;
     display: block;
     background-color: var(--code-background);
     border-radius: var(--card-border);
@@ -368,4 +370,6 @@ pre:has(code) {
     padding: 15px;
     max-width: max-content;
     font-size: var(--code-font-size);
+    white-space: pre;
+    overflow-y: auto;
 }
