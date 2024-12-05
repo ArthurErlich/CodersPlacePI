@@ -361,6 +361,7 @@ pre>code {
 }
 
 pre:has(code) {
+    display: block;
     background-color: var(--code-background);
     border-radius: var(--card-border);
     box-shadow: var(--inset-shadow);
