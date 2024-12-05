@@ -7,7 +7,13 @@ export class CodeBlockElement extends HTMLElement {
     }
     getFormattedContent() {
         let rawText = this.innerHTML;
-        console.log(rawText);
+        let rawTextLine = rawText.split("\n");
+        let leadingWhiteSpadeCount;
+        if (rawTextLine[0] == "") {
+            rawTextLine.shift();
+        }
+        leadingWhiteSpadeCount = rawTextLine[0].search(/\S|$/);
+        console.log(rawTextLine);
         return "";
     }
 }
