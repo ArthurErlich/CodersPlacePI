@@ -66,29 +66,29 @@
         </p>
         <h2>Implementation</h2>
         <p>
-        <pre><code> 
-let imageList = document.getElementsByTagName("img");
-console.log(imageList);
-addFullScreenImageModal();
-function addFullScreenImageModal() {
-    if (imageList.length == 0) {
-        return;
-    }
-    for (let i = 0; i < imageList.length; i++) {
-        imageList.item(i).addEventListener("click", function (event) {
-            let imgEvent = event.target;
-            let img;
-            try {
-                img = imgEvent;
-                console.log(img.src);
+        <custom-code-block>
+            let imageList = document.getElementsByTagName("img");
+            console.log(imageList);
+            addFullScreenImageModal();
+            function addFullScreenImageModal() {
+                if (imageList.length == 0) {
+                    return;
+                }
+                for (let i = 0; i < imageList.length; i++) {
+                    imageList.item(i).addEventListener("click", function (event) {
+                        let imgEvent = event.target;
+                        let img;
+                        try {
+                            img = imgEvent;
+                            console.log(img.src);
+                        }
+                        catch (error) {
+                            return;
+                        }
+                    });
+                }
             }
-            catch (error) {
-                return;
-            }
-        });
-    }
-}
-            </code></pre>
+        </custom-code-block>
         </p>
         <p>
             My first implementation was to try out how the dialog will look. For this I created a simple code which
@@ -105,21 +105,21 @@ function addFullScreenImageModal() {
         </p>
         <p>
             In the end, my CSS looked something like that:
-        <pre><code>
-#image_dialog[open] {
-    overflow: hidden;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
-    max-width: none;
-    max-height: none;
-    min-width: 200px;
-    min-height: 200px;
-}
-            </code></pre>
+        <custom-code-block>
+            #image_dialog[open] {
+                overflow: hidden;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0;
+                max-width: none;
+                max-height: none;
+                min-width: 200px;
+                min-height: 200px;
+            }
+            </custom-code-block>
         Did you spot the <code>open</code> attribute in the css selector? I used <code>Display: flex;</code> at first.
         This meant that the Dialog was visible, even if it was not open.
         This is why the CSS settings will only apply to the ID if the Dialog is open.
@@ -129,11 +129,11 @@ function addFullScreenImageModal() {
         <p>
             This was very simple, when selecting and using the Dialog inside a variable, you can simple "open" and
             "close" the dialog.
-        <pre><code>
-public closeDialog():void{
-    this.imageDialog.close();
-}
-        </code></pre>
+        <custom-code-block>
+            public closeDialog():void{
+                this.imageDialog.close();
+            }
+        </custom-code-block>
         As you can see, it is simple to close the Dialog.
         </p>
         <h2>Replacing Image in the Dialog</h2>
@@ -142,16 +142,16 @@ public closeDialog():void{
             And for safety the function returns out if the image dialog is empty. This happens if I don't want to add the full screen image custom-tag.
             There wont even be a event listener on the image.
             When no Images are found the function also returns out, saves some compute time and makes the code safe to use, even if some parts are missing.
-            <pre><code>
-this.imageList = document.getElementsByTagName("img");
-if (this.imageDialog == null || this.imageContainer == null) {
-    console.warn("not found on this page, skipping");
-    return;
-}
-if (this.imageList.length == 0) {
-    return;
-}
-            </code></pre>
+            <custom-code-block>
+                this.imageList = document.getElementsByTagName("img");
+                if (this.imageDialog == null || this.imageContainer == null) {
+                    console.warn("not found on this page, skipping");
+                    return;
+                }
+                if (this.imageList.length == 0) {
+                    return;
+                }
+            </custom-code-block>
         </p>
         <h2>Finish</h2>
         <p>
@@ -160,7 +160,6 @@ if (this.imageList.length == 0) {
         <p class="img_full_width">
             <img src="/frontend/images/AE_Gezeichnet.png" alt="Arthur Erlich Logo" loading="lazy">
         </p>
-        
     </main>
     <footer>
         <custom-footer></custom-footer>
