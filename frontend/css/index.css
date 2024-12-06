@@ -23,9 +23,13 @@
 main {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1900px;
+    /* max-width: 1900px; */
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.hero_scroll {
+    height: 13vh;
 }
 
 .github_card {
@@ -35,24 +39,53 @@ main {
 }
 
 .row_hero {
-    text-align: center;
-    font-weight: 900;
-    letter-spacing:5pt;
     height: 80vh;
     width: 100%;
-    background-image: URL("/frontend/images/homepage/TypeScriptCode\ Reference.png");
+    background-image: URL("/frontend/images/homepage/TypeScriptCode\ Reference_v2.png");
     background-repeat: no-repeat;
     background-position: center;
+    background-position: left;
     background-size: cover;
     border-radius: var(--card-border);
 }
 
-.row_hero_container{
+.row_hero_container {
     width: 100%;
     height: 100%;
-    background-color: rgba(1, 1, 1, 0.4);
+    background-color: rgba(1, 1, 1, 0.8);
     display: flex;
+    gap: 100px;
+    flex-direction: column;
     backdrop-filter: blur(2px);
     justify-content: center;
     align-items: center;
 }
+
+.hero_header {
+    font-size: 20pt;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 5pt;
+}
+
+#hero_typewriter {
+    border-right: .15em solid var(--standard-text-color);
+    animation: blink-cursor .95s step-end infinite;
+    height: 20px;
+}
+
+@keyframes blink-cursor {
+    0% {
+        border-right-color: transparent;
+    }
+
+    50% {
+        border-right-color: var(--standard-text-color);
+    }
+}
+
+/* .row_hero_container>div{
+    padding: 50px;
+    background-color: rgba(1, 1, 1, 0.4);
+    border-radius: var(--card-border);
+} */
