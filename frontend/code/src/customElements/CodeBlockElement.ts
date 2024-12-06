@@ -11,6 +11,7 @@ export class CodeBlockElement extends HTMLElement {
 
     //TODO: Add return!
     private getFormattedContent(): void {
+        //TODO:Move var scope to top
         let text: string = this.innerHTML;
         let rawTextLines: Array<string> = text.split("\n");
 
