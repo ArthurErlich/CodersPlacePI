@@ -34,8 +34,34 @@ main {
     max-width: var(--main-width);
 }
 
-#left_hero{
-    height: 400px;
+#left_hero {
+    /* width: 100%; */
+    height: 80vh;
+    min-width: 600px;
     border-radius: var(--card-border);
-    background-color: black;
+    box-shadow: var(--inset-shadow);
+    background-color: var(--trinary-background);
+    flex-grow: 2;
+    overflow: hidden;
+    /* Hero Img */
+    background-image: url("/frontend/images/homepage/New\ beginning16_9.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+#right_hero {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.row_hero {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    margin-bottom: 25px;
 }
