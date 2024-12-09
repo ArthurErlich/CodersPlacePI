@@ -5,7 +5,7 @@ export class IndexLinkingElement extends HTMLElement {
     connectedCallback() {
         window.addEventListener("pageshow", (event) => {
             let headerList = this.getHeaderTagList(["h1", "h2", "h3"]);
-            this.setAnchorPoint(headerList);
+            this.setAnkerPoint(headerList);
             this.createIndex(headerList);
         });
     }
@@ -14,7 +14,7 @@ export class IndexLinkingElement extends HTMLElement {
         let elementCollection = document.querySelectorAll(selectionString);
         return elementCollection;
     }
-    setAnchorPoint(headerList) {
+    setAnkerPoint(headerList) {
         headerList.forEach((header, key) => {
             header.id = header.innerText.trim().replace(" ", "-") + "-" + key;
         });
