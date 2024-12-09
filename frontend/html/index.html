@@ -7,11 +7,15 @@
     <title>Haylan's home</title>
     <link rel="icon" href="/frontend/images/AE_Gezeichnet_Favicon.jpg" type="image/x-icon">
     <!--css preload-->
-    <link rel="preload" href="/frontend/css/main.css" as="style">
-    <link rel="preload" href="/frontend/css/index.css" as="style">
+    <link rel="preload" href="/frontend/css/main.css" as="style" fetchpriority="low">
+    <link rel="preload" href="/frontend/css/index.css" as="style" fetchpriority="low">
     <!--font preload-->
     <link rel=”prefetch” href="/frontend/fonts/FiraCode-Medium.woff2" type="font/woff2" as="font"
         crossorigin="anonymous">
+
+    <!--img preload -->
+    <link rel="preload" href="/frontend/images/homepage/TypeScriptCode Reference_v2.png" as="image" type="image/png"
+        crossorigin="anonymous" fetchpriority="high">
 
     <link rel="stylesheet" href="/frontend/css/main.css">
     <link rel="stylesheet" href="/frontend/css/index.css">
@@ -24,13 +28,39 @@
     <header>
         <custom-header></custom-header>
     </header>
+    <div class="row_hero">
+        <div class="row_hero_container">
+            <div class="hero_header">
+                <h1>
+                    Full-Stack Developer
+                </h1>
+                <p>at your service.</p>
+            </div>
+            <div id="hero_typewriter">
+                TYPEWRITER HERE
+            </div>
+        </div>
+    </div>
+    <div class="hero_scroll">
+
+    </div>
     <main id="landingpage">
-        <h1>Hello there!</h1>
+        <h2>Hello there!</h2>
         <p>
             Welcome to my little Website Project. I'm Arthur Erlich or also known as Haylan in some games and GitHub.
             My Website has a Blog where I post random things about me, the world, what I do or even some work.
             I am a full stack programmer, mostly specializing in Shopware. I also do some 3D modeling and
             shading-experiments in Blender.
+        </p>
+        <p>
+            <!-- Technologies:
+        <div>HTML, CSS, TypeScript, PHP, Java</div>
+        Frameworks:
+        <div>Shopware 6, Symfony, Bootstrap</div>
+        DevOps:
+        <div>Git, GitHub</div>
+        Hardware:
+        <div>Linux, Arch and Ubuntu </div> -->
         </p>
         <p>
             You can see this website as a kind of a resume, or References to stuff I do.
